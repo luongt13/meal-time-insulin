@@ -35,7 +35,7 @@ To create a tool to calculate units of insulin to administer based on total carb
 
 ## Priority Matrix
 
-![priority matrix] (https:github.com/[luongt13]/[meal-time-insulin]/assets/priority-matrix.png)
+<!-- ![priority matrix] (https:github.com/[luongt13]/[meal-time-insulin]/assets/priority-matrix.png) -->
 
 ## Timeframes
 | Component | Priority | Estimated Time (hours) | Time Invested (hours) | Actual Time (hours) |
