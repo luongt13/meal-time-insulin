@@ -34,6 +34,7 @@ To create a tool to calculate units of insulin to administer based on total carb
 * Use localstorage to store created meals and frequently added food items
 
 ## Priority Matrix
+![alt text](/assets/priority-matrix.png)
 
 ## Timeframes
 | Component | Priority | Estimated Time (hours) | Time Invested (hours) | Actual Time (hours) |
