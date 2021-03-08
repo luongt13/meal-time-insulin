@@ -108,13 +108,6 @@ function extractFacts(facts) {
     let unit = facts.servingSizeUnit
     let size = facts.servingSize
     
-    //add p tag
-    
-    // listSelect.appendChild(foodDes)
-    // console.log(foodDes)
-
-    // let carb = facts.labelNutrients.carbohydrates.value
-    
     if (unit === "g") {
     const grams = document.createElement('option')
     grams.innerHTML = `${size}${unit}`
@@ -138,16 +131,15 @@ function extractFacts(facts) {
     }
     console.log(listSelect)
 
+    //add p tag and carb amount to p
+    let carbAmount = document.createElement('p')
+    carbAmount.innerHTML = facts.labelNutrients.carbohydrates.value
+    listSelect.appendChild(carbAmount)
+
+    //add p tag and desciption to list
     let foodDes = document.createElement('p')
     listSelect.appendChild(foodDes)
     foodDes.innerText = facts.description
-    // let grams = document.createElement('option')
-    // grams.innerHTML = facts.servingSizeUnit
-    // let cups = document.createElemet('option')
-    // let oz = document.createElement('option')
-  
-    // select.appendChild(grams)
-    // let listChild = document.createElement("li")
 }
 
 //second axious call to get nutrients via id
