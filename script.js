@@ -7,17 +7,45 @@ const nutrients = "https://trackapi.nutritionix.com/v2/search/item?nix_item_id="
 let form = document.querySelector('form')
 let input= document.querySelector('#search')
 let resultsSection = document.querySelector('.results')
+let list = document.querySelector('.list')
 
+//add to list 
+function addToList(event) {
+    let listItem = document.createElement('div')
+    console.log(event.target.id)
+    // listItem.innerHTML = 
+}
+
+
+//go through each gets id, name, photo, adds icon
 function displayResults(foods) {
     foods.forEach(food => {
-        console.log(food)
-        let item = document.createElement('div')
-        item.innerHTML = food.food_name
+        //create elements
+        const item = document.createElement('div')
+        item.classList.add('result-item')
+        const icon = document.createElement('img')
+        icon.classList.add('icon')
+        const img = document.createElement('img')
+        const name = document.createElement('p')
+        icon.id = food.tag_id
+
+        //add content
+        icon.src = "./assets/add-icon.png"
+        img.src = food.photo.thumb
+        name.innerHTML = food.food_name
+
+        //append
+        item.appendChild(icon)
+        item.appendChild(img)
+        item.appendChild(name)
         resultsSection.appendChild(item)
 
+        icon.addEventListener('click', addToList)
     })
 }
-async function getFoodId(query) {
+
+//gets food from database
+async function getFood(query) {
     try {
         let response = await axios.get(`${base_url}${query}`, {
             headers: {
@@ -35,7 +63,7 @@ async function getFoodId(query) {
 form.addEventListener('submit', (event) => {
     event.preventDefault()
     let foodItem = input.value
-    getFoodId(foodItem)
+    getFood(foodItem)
 })
 
 
