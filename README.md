@@ -182,6 +182,121 @@ To create a tool to calculate units of insulin to administer based on total carb
             ]
         },
 ```
+```
+{
+    "common": [
+        {
+            "food_name": "pizza",
+            "serving_unit": "slice",
+            "tag_name": "pizza",
+            "serving_qty": 1,
+            "common_type": null,
+            "tag_id": "1060",
+            "photo": {
+                "thumb": "https://nix-tag-images.s3.amazonaws.com/1060_thumb.jpg"
+            },
+            "full_nutrients": [
+                {
+                    "value": 12.1873,
+                    "attr_id": 203
+                },
+                {
+                    "value": 10.3683,
+                    "attr_id": 204
+                },
+                {
+                    "value": 35.6631,
+                    "attr_id": 205
+                },
+                {
+                    "value": 2.5787,
+                    "attr_id": 207
+                },
+                {
+                    "value": 284.62,
+                    "attr_id": 208
+                },
+                {
+                    "value": 28.8365,
+                    "attr_id": 209
+                },
+                {
+                    "value": 0.214,
+                    "attr_id": 210
+                },
+                {
+                    "value": 0.8346,
+                    "attr_id": 211
+                },
+                {
+                    "value": 1.07,
+                    "attr_id": 212
+                },
+                {
+                    "value": 0.4494,
+                    "attr_id": 213
+                },
+                {
+                    "value": 1.1235,
+                    "attr_id": 214
+                },
+                {
+                    "value": 0,
+                    "attr_id": 221
+                },
+                {
+                    "value": 46.1919,
+                    "attr_id": 255
+                },
+                {
+                    "value": 0,
+                    "attr_id": 262
+                },
+                {
+                    "value": 0,
+                    "attr_id": 263
+                },
+                {
+                    "value": 1190.91,
+                    "attr_id": 268
+                },
+                {
+                    "value": 3.8306,
+                    "attr_id": 269
+                },
+                {
+                    "value": 0.1391,
+                    "attr_id": 287
+                },
+                {
+                    "value": 2.461,
+                    "attr_id": 291
+                },
+                {
+                    "value": 201.16,
+                    "attr_id": 301
+                },
+                {
+                    "value": 2.6536,
+                    "attr_id": 303
+                },
+                {
+                    "value": 25.68,
+                    "attr_id": 304
+                },
+                {
+                    "value": 231.12,
+                    "attr_id": 305
+                },
+                {
+                    "value": 184.04,
+                    "attr_id": 306
+                },
+                {
+                    "value": 639.86,
+                    "attr_id": 307
+                },
+```
 
 ## Wireframes
 [Link to interactive wireframe](https://www.figma.com/proto/t9LAoI0icyOHnMaj4ElcS8/Meal-Time-Insulin?node-id=0%3A3&scaling=contain)
@@ -224,7 +339,7 @@ To create a tool to calculate units of insulin to administer based on total carb
 | **INFRASTRUCTURE:** |
 | Set up HTML, CSS, JS      | H |  3  | TBD | TBD |
 | **DATA:** |
-| API                       | H |  5  | TBD | TBD |
+| API                       | H |  6  | TBD | TBD |
 | Work with JS and DOM      | H |  4  | TBD | TBD |
 | Connect data with page    | H |  3  | TBD | TBD |
 | **DESIGN:** |
@@ -237,7 +352,7 @@ To create a tool to calculate units of insulin to administer based on total carb
 | Functional buttons        | H |  2  | TBD | TBD | 
 | Adjust serving size       | H |  5  | TBD | TBD |
 | Add and calculate insulin to carbohydrate ratio | H | 3 | TBD | TBD |
-| **TOTAL:**                |   |**47**|**TBD**|**TBD**| 
+| **TOTAL:**                |   |**48**|**TBD**|**TBD**| 
 
 ## Code Snippet
 
