@@ -68,21 +68,20 @@
 //     getFood(foodItem)
 // })
 
-
+//api call related things
 const key = "I6G9idb7cmyvfgVNwlhsDegvfMNfGcPJFAfqH4s1"
 const domain = "https://api.nal.usda.gov/fdc/v1/foods/search"
 const parameters = "pageSize=50"
 const base_url = `${domain}?api_key=${key}&${parameters}&query=`
-
 const nutrientDomain = "https://api.nal.usda.gov/fdc/v1/food/"
 const limit = "25"
 
+
+//selecting elements 
 let form = document.querySelector('form')
 let input = document.querySelector('#search')
 let resultsSection = document.querySelector('.results')
 let list = document.querySelector('.list')
-// let listParent = document.createElement('ul')
-// let select = document.querySelector('select')
 let listSelect = document.querySelector('#custom-list')
 
 //remove items
@@ -92,9 +91,14 @@ function removeItems() {
     }
 }
 
-//extract serving size, serving size unit, and carbs
+//update carb amount
+function updateNumbers(number1, number2) {
+    //multiply serving size by event and update carb amount
+    console.log(number1 * number2)
+}
+
+//extract and add serving size, serving size unit, and carbs
 function extractFacts(facts) {
-    console.log(facts.description)
     //create select element
     let select = document.createElement('select')
     //create input element
@@ -108,6 +112,7 @@ function extractFacts(facts) {
     let unit = facts.servingSizeUnit
     let size = facts.servingSize
     
+    //create, adds content, and appends
     if (unit === "g") {
     const grams = document.createElement('option')
     grams.innerHTML = `${size}${unit}`
@@ -129,10 +134,9 @@ function extractFacts(facts) {
         select.appendChild(setAmount)
         listSelect.appendChild(select)
     }
-    console.log(listSelect)
-
     //add p tag and carb amount to p
     let carbAmount = document.createElement('p')
+    carbAmount.classList.add('carb-amount')
     carbAmount.innerHTML = facts.labelNutrients.carbohydrates.value
     listSelect.appendChild(carbAmount)
 
@@ -140,6 +144,12 @@ function extractFacts(facts) {
     let foodDes = document.createElement('p')
     listSelect.appendChild(foodDes)
     foodDes.innerText = facts.description
+
+    servingInput.addEventListener('input', (event)=> {
+        let starter = document.querySelector('.carb-amount').innerHTML
+        let multiplier = event.target.value
+        updateNumbers(starter, multiplier)
+    })
 }
 
 //second axious call to get nutrients via id
@@ -152,10 +162,12 @@ async function getNutrients(itemId) {
     }
 }
 
+//get id based on the item they clicked on
 function getId(event) {
     getNutrients(event.target.id)
 }
 
+//display the search results
 function displayResults(foods) {
     foods.forEach(food => {
         //create elements
@@ -178,6 +190,7 @@ function displayResults(foods) {
         item.appendChild(brand)
         resultsSection.appendChild(item)
 
+        //when icon is clicked
         icon.addEventListener('click', getId)
     })
 }
@@ -192,6 +205,7 @@ async function getFoods(query) {
     }
 }
 
+//when search button is clicked
 form.addEventListener('submit', (event) => {
     event.preventDefault()
     let foodItem = input.value
