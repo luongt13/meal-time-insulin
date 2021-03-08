@@ -81,7 +81,7 @@ let form = document.querySelector('form')
 let input = document.querySelector('#search')
 let resultsSection = document.querySelector('.results')
 let list = document.querySelector('.list')
-let listParent = document.createElement('ul')
+// let listParent = document.createElement('ul')
 // let select = document.querySelector('select')
 let listSelect = document.querySelector('#custom-list')
 
@@ -94,18 +94,27 @@ function removeItems() {
 
 //extract serving size, serving size unit, and carbs
 function extractFacts(facts) {
-    console.log(facts)
+    console.log(facts.description)
+    //create select element
     let select = document.createElement('select')
+    //create input element
     let servingInput = document.createElement('input')
+    //add type to input
+    servingInput.type = "number"
+    //append input to select
     listSelect.appendChild(servingInput)
 
+    //set serving size and unit to variables
     let unit = facts.servingSizeUnit
     let size = facts.servingSize
-    let carb = facts.labelNutrients.carbohydrates.value
-    // let foodName = document.querySelector('p')
-    let foodName = facts.description
-    console.log(facts.labelNutrients.carbohydrates.value)    
+    
+    //add p tag
+    
+    // listSelect.appendChild(foodDes)
+    // console.log(foodDes)
 
+    // let carb = facts.labelNutrients.carbohydrates.value
+    
     if (unit === "g") {
     const grams = document.createElement('option')
     grams.innerHTML = `${size}${unit}`
@@ -128,6 +137,10 @@ function extractFacts(facts) {
         listSelect.appendChild(select)
     }
     console.log(listSelect)
+
+    let foodDes = document.createElement('p')
+    listSelect.appendChild(foodDes)
+    foodDes.innerText = facts.description
     // let grams = document.createElement('option')
     // grams.innerHTML = facts.servingSizeUnit
     // let cups = document.createElemet('option')
