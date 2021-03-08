@@ -78,7 +78,7 @@ const nutrientDomain = "https://api.nal.usda.gov/fdc/v1/food/"
 const limit = "25"
 
 let form = document.querySelector('form')
-let input= document.querySelector('#search')
+let input = document.querySelector('#search')
 let resultsSection = document.querySelector('.results')
 let list = document.querySelector('.list')
 let listParent = document.createElement('ul')
@@ -96,14 +96,15 @@ function removeItems() {
 function extractFacts(facts) {
     console.log(facts)
     let select = document.createElement('select')
+    let servingInput = document.createElement('input')
+    listSelect.appendChild(servingInput)
+
     let unit = facts.servingSizeUnit
     let size = facts.servingSize
-    let nutrients = facts.labelNutrients.carbohydrates.value
+    let carb = facts.labelNutrients.carbohydrates.value
     // let foodName = document.querySelector('p')
-    console.log(facts.description)
-    //create select element
-    //append in form?
-    
+    let foodName = facts.description
+    console.log(facts.labelNutrients.carbohydrates.value)    
 
     if (unit === "g") {
     const grams = document.createElement('option')
@@ -123,8 +124,10 @@ function extractFacts(facts) {
     } else {
         const setAmount = document.createElement('option')
         setAmount.innerHTML = `${size}${unit}`
+        select.appendChild(setAmount)
+        listSelect.appendChild(select)
     }
-    console.log(select)
+    console.log(listSelect)
     // let grams = document.createElement('option')
     // grams.innerHTML = facts.servingSizeUnit
     // let cups = document.createElemet('option')
@@ -133,6 +136,7 @@ function extractFacts(facts) {
     // select.appendChild(grams)
     // let listChild = document.createElement("li")
 }
+
 //second axious call to get nutrients via id
 async function getNutrients(itemId) {
     try {
