@@ -1,6 +1,6 @@
 # Project Overview
 
-## Projecct Name
+## Project Name
 Meal Time Insulin
 
 ## Project Description
