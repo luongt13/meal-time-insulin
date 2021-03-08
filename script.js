@@ -73,17 +73,47 @@ const key = "I6G9idb7cmyvfgVNwlhsDegvfMNfGcPJFAfqH4s1"
 const domain = "https://api.nal.usda.gov/fdc/v1/foods/search"
 const parameters = "pageSize=50"
 const base_url = `${domain}?api_key=${key}&${parameters}&query=`
+
 const nutrientDomain = "https://api.nal.usda.gov/fdc/v1/food/"
-const nutrient_url = `${nutrientDomain}816524?api_key=${key}&${limits}`
-const limits = "nutrients=25"
+const limit = "25"
 
 let form = document.querySelector('form')
 let input= document.querySelector('#search')
 let resultsSection = document.querySelector('.results')
 let list = document.querySelector('.list')
+let listParent = document.createElement('ul')
+let select = document.querySelector('select')
+
+
+//remove items
+function removeItems() {
+    while (resultsSection.firstChild) {
+        resultsSection.removeChild(resultsSection.firstChild)
+    }
+}
+
+//extract serving size, serving size unit, and carbs
+function extractFacts(facts) {
+    let grams = document.createElement('option')
+    servingUnit.innerHTML = facts.servingSizeUnit
+    let 
+    // select.appendChild(grams)
+    // let listChild = document.createElement("li")
+}
+//second axious call to get nutrients via id
+async function getNutrients(itemId) {
+    try {
+        const info = await axios.get(`${nutrientDomain}${itemId}?api_key=${key}&nutrients=${limit}`)
+        // extractFacts(info.data)
+        console.log(info)
+        // console.log(Object.values(info.data))
+        // console.log(info.data.labelNutrients)
+    } catch {
+        console.log("Cannot Find Nutrients")
+    }
+}
 
 function getId(event) {
-    let listItem = document.createElement('div')
     getNutrients(event.target.id)
 }
 
@@ -113,19 +143,12 @@ function displayResults(foods) {
     })
 }
 
-//second axious call to get nutrients via id
-async function getNutrients(itemId) {
-    try {
-        let nutritionfacts = await axious.get(``)
-    }
-}
-
-
 //first axios call to get list of foods 
 async function getFoods(query) {
     try {
-        let response = await axios.get(`${base_url}${query}`)
+        const response = await axios.get(`${base_url}${query}`)
         displayResults(response.data.foods)
+        console.log(response)
     } catch {
         alert("No Food Found")
     }
@@ -134,5 +157,6 @@ async function getFoods(query) {
 form.addEventListener('submit', (event) => {
     event.preventDefault()
     let foodItem = input.value
+    removeItems()
     getFoods(foodItem)
 })
