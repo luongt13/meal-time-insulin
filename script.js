@@ -82,8 +82,8 @@ let input= document.querySelector('#search')
 let resultsSection = document.querySelector('.results')
 let list = document.querySelector('.list')
 let listParent = document.createElement('ul')
-let select = document.querySelector('select')
-
+// let select = document.querySelector('select')
+let listSelect = document.querySelector('#custom-list')
 
 //remove items
 function removeItems() {
@@ -94,9 +94,42 @@ function removeItems() {
 
 //extract serving size, serving size unit, and carbs
 function extractFacts(facts) {
-    let grams = document.createElement('option')
-    servingUnit.innerHTML = facts.servingSizeUnit
-    let 
+    console.log(facts)
+    let select = document.createElement('select')
+    let unit = facts.servingSizeUnit
+    let size = facts.servingSize
+    let nutrients = facts.labelNutrients.carbohydrates.value
+    // let foodName = document.querySelector('p')
+    console.log(facts.description)
+    //create select element
+    //append in form?
+    
+
+    if (unit === "g") {
+    const grams = document.createElement('option')
+    grams.innerHTML = `${size}${unit}`
+    select.appendChild(grams)
+    listSelect.appendChild(select)
+
+    } else if (unit === "ml") {
+    const mliters = document.createElement('option')
+    const ounces = document.createElement('option')
+    mliters.innerHTML = `${size}${unit}`
+    ounces.innerHTML = size/30 + "oz"
+    select.appendChild(mliters)
+    select.appendChild(ounces)
+    listSelect.appendChild(select)
+
+    } else {
+        const setAmount = document.createElement('option')
+        setAmount.innerHTML = `${size}${unit}`
+    }
+    console.log(select)
+    // let grams = document.createElement('option')
+    // grams.innerHTML = facts.servingSizeUnit
+    // let cups = document.createElemet('option')
+    // let oz = document.createElement('option')
+  
     // select.appendChild(grams)
     // let listChild = document.createElement("li")
 }
@@ -104,10 +137,7 @@ function extractFacts(facts) {
 async function getNutrients(itemId) {
     try {
         const info = await axios.get(`${nutrientDomain}${itemId}?api_key=${key}&nutrients=${limit}`)
-        // extractFacts(info.data)
-        console.log(info)
-        // console.log(Object.values(info.data))
-        // console.log(info.data.labelNutrients)
+        extractFacts(info.data)
     } catch {
         console.log("Cannot Find Nutrients")
     }
@@ -148,7 +178,6 @@ async function getFoods(query) {
     try {
         const response = await axios.get(`${base_url}${query}`)
         displayResults(response.data.foods)
-        console.log(response)
     } catch {
         alert("No Food Found")
     }
