@@ -33,6 +33,13 @@ h1, h2, h3 {
    padding: 10px;
 }
 
+select {
+    border: none;
+    background-color: #4682B4;
+    border-radius: 25px;
+    padding: 3px;
+}
+
 .results {
     display: flex;
     flex-flow: row wrap;
@@ -56,11 +63,11 @@ h1, h2, h3 {
 
 .text {
     width: 100%;
-    margin-left: 5%;
+    margin-left: 3%;
     background-color: cyan;
 }
 
-.text p {
+p {
     font-weight: bold;
 }
 
@@ -93,6 +100,16 @@ button {
     width: 80%;
 }
 
+.added {
+    background-color: white;
+    border-radius: 25px;
+}
+
 #custom-list {
     color: black;
+}
+
+#qty {
+    width: 10%; 
+
 }

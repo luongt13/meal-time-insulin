@@ -68,6 +68,8 @@ function addTotal() {
 
 //extract and add serving size, serving size unit, and carbs
 function addToList(object) {
+    let container = document.createElement('div')
+    container.classList.add('added')
     //create select element
     let select = document.createElement('select')
     //create input element
@@ -85,26 +87,24 @@ function addToList(object) {
     
      //add p tag and desciption to list
      let foodDes = document.createElement('p')
-     listSelect.appendChild(foodDes)
+     container.appendChild(foodDes)
      foodDes.innerText = object.name
 
-     listSelect.appendChild(servingInput)
+     container.appendChild(servingInput)
 
     //add option and serving sizes
     const setAmount = document.createElement('option')
     setAmount.innerHTML = `${unit} (${size}g)`
     select.appendChild(setAmount)
-    listSelect.appendChild(select)
-
-
-   
+    container.appendChild(select)
 
     //add div tag
     let carbAmount = document.createElement('div')
     carbAmount.classList.add('carb-amount')
     let starter = object.carb
-    listSelect.appendChild(carbAmount)
+    container.appendChild(carbAmount)
 
+    listSelect.appendChild(container)
     //update carb when quantity is added
     servingInput.addEventListener('input', (event)=> {
         let multiplier = event.target.value
@@ -167,7 +167,6 @@ function displayCommonResults(foods) {
 //display for branded foods
 function displayBrandedResults(brandedFoods) {
     brandedFoods.forEach(brandedFood => {
-
         //create elements
         const item = document.createElement('div')
         item.classList.add('result-item')
