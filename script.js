@@ -74,8 +74,8 @@ function addToList(object) {
     let servingInput = document.createElement('input')
     //add type to input
     servingInput.type = "number"
+    servingInput.id = "qty"
     //append input to select
-    listSelect.appendChild(servingInput)
 
     // console.log(facts.brandedFoodCategory)
 
@@ -83,17 +83,21 @@ function addToList(object) {
     let unit = object.unit
     let size = object.weight
     
-    //create, adds content, and appends
-        const setAmount = document.createElement('option')
-        setAmount.innerHTML = `${unit} (${size}g)`
-        select.appendChild(setAmount)
-        listSelect.appendChild(select)
-    
+     //add p tag and desciption to list
+     let foodDes = document.createElement('p')
+     listSelect.appendChild(foodDes)
+     foodDes.innerText = object.name
 
-    //add p tag and desciption to list
-    let foodDes = document.createElement('p')
-    listSelect.appendChild(foodDes)
-    foodDes.innerText = object.name
+     listSelect.appendChild(servingInput)
+
+    //add option and serving sizes
+    const setAmount = document.createElement('option')
+    setAmount.innerHTML = `${unit} (${size}g)`
+    select.appendChild(setAmount)
+    listSelect.appendChild(select)
+
+
+   
 
     //add div tag
     let carbAmount = document.createElement('div')

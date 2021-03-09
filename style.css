@@ -28,6 +28,11 @@ input {
     border-radius: 25px;
 }
 
+h1, h2, h3 {
+   margin: 0;
+   padding: 10px;
+}
+
 .results {
     display: flex;
     flex-flow: row wrap;
@@ -41,8 +46,11 @@ input {
     height: auto;
     align-items: center;
     padding: 10px;
+    margin: 5px 0 5px 0;
     width: 100%;
     background-color: white;
+    border-radius: 25px;
+
     /* justify-content: space-between; */
 }
 
@@ -58,10 +66,11 @@ input {
 
 button {
     border: none;
-    background-color: blueviolet;
+    background-color: #4682B4;
     padding: 10px 20px;
     color: white;
     border-radius: 25px;
+    text-transform: uppercase;
 }
 
 .icon {
@@ -77,4 +86,13 @@ button {
 .thumbnail {
     width: 20%;
     height: auto
+}
+
+.list {
+    background-color: palegreen;
+    width: 80%;
+}
+
+#custom-list {
+    color: black;
 }
