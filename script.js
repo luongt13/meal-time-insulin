@@ -92,9 +92,12 @@ function removeItems() {
 }
 
 //update carb amount
-function updateNumbers(number1, number2) {
+function updateAmount(number1, number2) {
     //multiply serving size by event and update carb amount
-    console.log(number1 * number2)
+    let newAmount = number1 * number2
+    document.querySelector('.carb-amount').innerText = newAmount
+  
+
 }
 
 //extract and add serving size, serving size unit, and carbs
@@ -148,7 +151,7 @@ function extractFacts(facts) {
     servingInput.addEventListener('input', (event)=> {
         let starter = document.querySelector('.carb-amount').innerHTML
         let multiplier = event.target.value
-        updateNumbers(starter, multiplier)
+        updateAmount(starter, multiplier)
     })
 }
 
