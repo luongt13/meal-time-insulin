@@ -92,13 +92,11 @@ function removeItems() {
 }
 
 //update carb amount
-function updateAmount(number1, number2) {
-    //multiply serving size by event and update carb amount
-    let newAmount = number1 * number2
-    document.querySelector('.carb-amount').innerText = newAmount
-  
-
-}
+// function updateAmount(number1, number2) {
+//     //multiply serving size by event and update carb amount
+//     let newAmount = number1 * number2
+//     // document.querySelector('.carb-amount').innerText = newAmount
+// }
 
 //extract and add serving size, serving size unit, and carbs
 function extractFacts(facts) {
@@ -137,21 +135,26 @@ function extractFacts(facts) {
         select.appendChild(setAmount)
         listSelect.appendChild(select)
     }
-    //add p tag and carb amount to p
-    let carbAmount = document.createElement('p')
-    carbAmount.classList.add('carb-amount')
-    carbAmount.innerHTML = facts.labelNutrients.carbohydrates.value
-    listSelect.appendChild(carbAmount)
 
     //add p tag and desciption to list
     let foodDes = document.createElement('p')
     listSelect.appendChild(foodDes)
     foodDes.innerText = facts.description
 
+    //add p tag and carb amount to p
+    let carbAmount = document.createElement('p')
+    carbAmount.classList.add('carb-amount')
+    let starter = facts.labelNutrients.carbohydrates.value
+    // carbAmount.innerHTML = facts.labelNutrients.carbohydrates.value
+    listSelect.appendChild(carbAmount)
+
     servingInput.addEventListener('input', (event)=> {
-        let starter = document.querySelector('.carb-amount').innerHTML
+        // let starter = document.querySelector('.carb-amount').innerHTML
         let multiplier = event.target.value
-        updateAmount(starter, multiplier)
+        let newAmount = starter * multiplier
+        carbAmount.innerHTML = newAmount
+        console.log(carbAmount)
+        // updateAmount(starter, multiplier)
     })
 }
 
