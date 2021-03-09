@@ -110,7 +110,7 @@ function addToList(object) {
     })
 }
 
-//display the search results
+//display for common foods
 function displayCommonResults(foods) {
     foods.forEach(food => {
 
@@ -156,6 +156,7 @@ function displayCommonResults(foods) {
     })
 }
 
+//display for branded foods
 function displayBrandedResults(brandedFoods) {
     brandedFoods.forEach(brandedFood => {
 
