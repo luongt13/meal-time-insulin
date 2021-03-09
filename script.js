@@ -48,7 +48,7 @@ function displayTotal(total) {
         let totalCarbs = document.createElement('div')
         totalCarbs.classList.add('total-carbs')
         list.removeChild(list.lastChild)
-        totalCarbs.innerHTML = total
+        totalCarbs.innerHTML = `Total Carbohydrate: ${total}`
         list.appendChild(totalCarbs)
     }
 }
@@ -76,21 +76,20 @@ function addToList(object) {
     let servingInput = document.createElement('input')
     //add type to input
     servingInput.type = "number"
+    servingInput.placeholder = "Enter Number"
     servingInput.id = "qty"
-    //append input to select
-
-    // console.log(facts.brandedFoodCategory)
 
     //set serving size and unit to variables
     let unit = object.unit
     let size = object.weight
-    
-     //add p tag and desciption to list
-     let foodDes = document.createElement('p')
-     container.appendChild(foodDes)
-     foodDes.innerText = object.name
 
-     container.appendChild(servingInput)
+    //add p tag and desciption to list
+    let foodDes = document.createElement('p')
+    container.appendChild(foodDes)
+    foodDes.innerText = object.name
+
+    //append input to select
+    container.appendChild(servingInput)
 
     //add option and serving sizes
     const setAmount = document.createElement('option')

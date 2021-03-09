@@ -38,12 +38,17 @@ select {
     background-color: #4682B4;
     border-radius: 25px;
     padding: 3px;
+    margin: 5px;
 }
 
+/* https://www.w3schools.com/css/css_overflow.asp */
 .results {
     display: flex;
     flex-flow: row wrap;
+    margin-top: 10px;
     width: 80%;
+    height: 450px;
+    overflow: scroll;
 }
 
 .result-item {
@@ -96,20 +101,42 @@ button {
 }
 
 .list {
-    background-color: palegreen;
     width: 80%;
+}
+
+.carb-amount {
+    font-weight: bold;
 }
 
 .added {
     background-color: white;
     border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px 0 5px 0; 
+    padding: 10px;
+}
+
+.added p {
+    margin: 0;
+}
+
+.total-carbs {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    height: 50px;
+    font-weight: bold;
 }
 
 #custom-list {
     color: black;
 }
 
-#qty {
-    width: 10%; 
-
+#qty[type="number"]{
+    /* width: 20px;   */
+    margin: 5px 0 5px 5px; 
 }
