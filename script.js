@@ -1,73 +1,3 @@
-// const domain = "https://trackapi.nutritionix.com/v2/search/instant"
-// const detail = "detailed=true"
-// const base_url = `${domain}?${detail}&query=`
-
-// const nutrients = "https://trackapi.nutritionix.com/v2/search/item?nix_item_id="
-
-// let form = document.querySelector('form')
-// let input= document.querySelector('#search')
-// let resultsSection = document.querySelector('.results')
-// let list = document.querySelector('.list')
-
-// //add to list 
-// function addToList(event) {
-//     let listItem = document.createElement('div')
-//     console.log(event.target.id)
-//     // listItem.innerHTML = 
-// }
-
-
-// //go through each gets id, name, photo, adds icon
-// function displayResults(foods) {
-//     console.log(foods)
-//     foods.forEach(food => {
-//         //create elements
-//         const item = document.createElement('div')
-//         item.classList.add('result-item')
-//         const icon = document.createElement('img')
-//         icon.classList.add('icon')
-//         const img = document.createElement('img')
-//         const name = document.createElement('p')
-
-//         //add content
-//         icon.src = "./assets/add-icon.png"
-//         img.src = food.photo.thumb
-//         name.innerHTML = food.food_name
-//         icon.id = food.nix_item_id
-
-//         //append
-//         item.appendChild(icon)
-//         item.appendChild(img)
-//         item.appendChild(name)
-//         resultsSection.appendChild(item)
-
-//         icon.addEventListener('click', addToList)
-//     })
-// }
-
-// //gets food from database
-// async function getFood(query) {
-//     try {
-//         let response = await axios.get(`${base_url}${query}`, {
-//             headers: {
-//                 'x-app-id': '72765c18',
-//                 'x-app-key': '9af4787a2fa9eb00620b9b5328110c9d',
-//                 'x-remote-user-id': '0',
-//             }
-//         })
-
-//         displayResults(response.data.branded)
-//     } catch {
-//         alert("No Food Found")
-//     }
-// }
-
-// form.addEventListener('submit', (event) => {
-//     event.preventDefault()
-//     let foodItem = input.value
-//     getFood(foodItem)
-// })
-
 //api call related things
 const domain = "https://trackapi.nutritionix.com/v2/search/instant"
 const detail = "detailed=true"
@@ -222,8 +152,6 @@ function displayCommonResults(foods) {
         item.appendChild(serving)
         resultsSection.appendChild(item)
 
-        // let pushDetails = addToList(setDetails)
-        // console.log(pushDetails)
         icon.addEventListener('click', ()=> addToList(setDetails))
     })
 }
@@ -246,6 +174,22 @@ function displayBrandedResults(brandedFoods) {
         name.innerText = `${brandedFood.food_name}, ${brandedFood.brand_name}`
         serving.innerHTML = `${brandedFood.serving_qty} ${brandedFood.serving_unit}`
 
+         //gather info into object
+         const setDetails = {
+            name: brandedFood.food_name,
+            quantity: brandedFood.serving_qty,
+            unit: brandedFood.serving_unit,
+            weight: brandedFood.serving_weight_grams,
+            carb: 0,
+        }
+
+        //get specific carb amount for food item
+        brandedFood.full_nutrients.forEach(carb => {
+            if (carb.attr_id === 205) {
+               setDetails.carb = carb.value
+            }
+            })
+
         //append
         item.appendChild(icon)
         item.appendChild(img)
@@ -254,7 +198,7 @@ function displayBrandedResults(brandedFoods) {
         resultsSection.appendChild(item)
 
         //when icon is clicked
-        // icon.addEventListener('click', addToList)
+        icon.addEventListener('click', ()=> addToList(setDetails))
     })
 }
 
