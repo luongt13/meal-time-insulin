@@ -79,6 +79,9 @@ let input = document.querySelector('#search')
 let resultsSection = document.querySelector('.results')
 let list = document.querySelector('.list')
 let listSelect = document.querySelector('#custom-list')
+let endInput = document.querySelector('#insulinToCarb')
+let carbInput = document.querySelector('#carb')
+let units = document.querySelector('#units')
 
 //remove items
 function removeItems() {
@@ -86,13 +89,34 @@ function removeItems() {
         resultsSection.removeChild(resultsSection.firstChild)
     }
 }
+
+//display units of insulin
+function displayUnits(unitsInsulin) {
+    units.innerHTML = unitsInsulin
+}
+//calculate based on input and carb ratio
+function calculate(totalCarb, carbRatio) {
+  let unitsInsulin = totalCarb/carbRatio
+  displayUnits(unitsInsulin)
+}
+
+//event listener for calculate button to get total carbs and carb ratio
+endInput.addEventListener('submit', (event => {
+    event.preventDefault()
+    let totalCarb = document.querySelector('.total-carbs').innerHTML
+    let carbRatio = carbInput.value
+    calculate(totalCarb, carbRatio)   
+}))
+
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN
 //https://stackoverflow.com/questions/34193751/js-remove-last-child
+
 //display total carbs 
 function displayTotal(total) {
     if (isNaN(total)) {
     } else {
         let totalCarbs = document.createElement('div')
+        totalCarbs.classList.add('total-carbs')
         list.removeChild(list.lastChild)
         totalCarbs.innerHTML = total
         list.appendChild(totalCarbs)
@@ -109,14 +133,11 @@ function addTotal() {
         array.push(int)
     })
     let total = array.reduce((accumulator, currentValue) => accumulator + currentValue)
-    console.log(array)
     displayTotal(total)
 }
 
-
 //extract and add serving size, serving size unit, and carbs
 function addToList(object) {
-    console.log(object)
     //create select element
     let select = document.createElement('select')
     //create input element
