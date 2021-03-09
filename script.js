@@ -9,7 +9,7 @@ let input = document.querySelector('#search')
 let resultsSection = document.querySelector('.results')
 let list = document.querySelector('.list')
 let listSelect = document.querySelector('#custom-list')
-let endInput = document.querySelector('#insulinToCarb')
+let endInput = document.querySelector('#insulin-to-carb')
 let carbInput = document.querySelector('#carb')
 let units = document.querySelector('#units')
 
@@ -120,6 +120,9 @@ function displayCommonResults(foods) {
         const icon = document.createElement('img')
         icon.classList.add('icon')
         const img = document.createElement('img')
+        img.classList.add('thumbnail')
+        const text = document.createElement('div')
+        text.classList.add('text')
         const name = document.createElement('p')
         const serving = document.createElement('p')
 
@@ -146,10 +149,11 @@ function displayCommonResults(foods) {
             })
        
         //append
-        item.appendChild(icon)
         item.appendChild(img)
-        item.appendChild(name)
-        item.appendChild(serving)
+        text.appendChild(name)
+        text.appendChild(serving)
+        item.appendChild(text)
+        item.appendChild(icon)
         resultsSection.appendChild(item)
 
         icon.addEventListener('click', ()=> addToList(setDetails))
@@ -166,6 +170,9 @@ function displayBrandedResults(brandedFoods) {
         const icon = document.createElement('img')
         icon.classList.add('icon')
         const img = document.createElement('img')
+        img.classList.add('thumbnail')
+        const text= document.createElement('div')
+        text.classList.add('text')
         const name = document.createElement('p')
         const serving = document.createElement('p')
 
@@ -192,10 +199,11 @@ function displayBrandedResults(brandedFoods) {
             })
 
         //append
-        item.appendChild(icon)
         item.appendChild(img)
-        item.appendChild(name)
-        item.appendChild(serving)
+        text.appendChild(name)
+        text.appendChild(serving)
+        item.appendChild(text)
+        item.appendChild(icon)
         resultsSection.appendChild(item)
 
         //when icon is clicked
