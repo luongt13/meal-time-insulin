@@ -339,9 +339,9 @@ To create a tool to calculate units of insulin to administer based on total carb
 | **INFRASTRUCTURE:** |
 | Set up HTML, CSS, JS      | H |  3  | TBD | TBD |
 | **DATA:** |
-| API                       | H |  6  | TBD | TBD |
-| Work with JS and DOM      | H |  4  | TBD | TBD |
-| Connect data with page    | H |  3  | TBD | TBD |
+| API                       | H |  6  | 6 | TBD |
+| Work with JS and DOM      | H |  4  | 3 | TBD |
+| Connect data with page    | H |  3  | 3 | TBD |
 | **DESIGN:** |
 | Responsive CSS            | H |  6  | TBD | TBD |
 | Layout                    | H |  3  | TBD | TBD |

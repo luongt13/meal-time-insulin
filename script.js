@@ -91,12 +91,22 @@ function removeItems() {
     }
 }
 
-//update carb amount
-// function updateAmount(number1, number2) {
-//     //multiply serving size by event and update carb amount
-//     let newAmount = number1 * number2
-//     // document.querySelector('.carb-amount').innerText = newAmount
-// }
+//add total
+function addTotal() {
+    
+    let array = []
+    // let getAmounts = document.querySelectorAll('.carb-amount')
+    let getAmounts = document.querySelectorAll('.carb-amount')
+    getAmounts.forEach(value => {
+        let values = value.innerHTML
+        let int = parseInt(values)
+        array.push(int)
+        console.log(array)
+    })
+
+    console.log(array.reduce((accumulator, currentValue) => accumulator + currentValue))
+}
+
 
 //extract and add serving size, serving size unit, and carbs
 function extractFacts(facts) {
@@ -148,14 +158,14 @@ function extractFacts(facts) {
     // carbAmount.innerHTML = facts.labelNutrients.carbohydrates.value
     listSelect.appendChild(carbAmount)
 
+    //update carb when quantity is added
     servingInput.addEventListener('input', (event)=> {
-        // let starter = document.querySelector('.carb-amount').innerHTML
         let multiplier = event.target.value
         let newAmount = starter * multiplier
         carbAmount.innerHTML = newAmount
-        console.log(carbAmount)
-        // updateAmount(starter, multiplier)
+        addTotal()
     })
+
 }
 
 //second axious call to get nutrients via id
