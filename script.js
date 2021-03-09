@@ -90,21 +90,33 @@ function removeItems() {
         resultsSection.removeChild(resultsSection.firstChild)
     }
 }
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN
+//https://stackoverflow.com/questions/34193751/js-remove-last-child
+//display total carbs 
+function displayTotal(total) {
+    console.log(total)
+    if (isNaN(total)) {
 
-//add total
+    } else {
+        let totalCarbs = document.createElement('div')
+        list.removeChild(list.lastChild)
+        totalCarbs.innerHTML = total
+        list.appendChild(totalCarbs)
+    }
+}
+
+//add total carbs
 function addTotal() {
-    
     let array = []
-    // let getAmounts = document.querySelectorAll('.carb-amount')
     let getAmounts = document.querySelectorAll('.carb-amount')
     getAmounts.forEach(value => {
         let values = value.innerHTML
         let int = parseInt(values)
         array.push(int)
-        console.log(array)
     })
-
-    console.log(array.reduce((accumulator, currentValue) => accumulator + currentValue))
+    let total = array.reduce((accumulator, currentValue) => accumulator + currentValue)
+    console.log(array)
+    displayTotal(total)
 }
 
 
@@ -125,19 +137,19 @@ function extractFacts(facts) {
     
     //create, adds content, and appends
     if (unit === "g") {
-    const grams = document.createElement('option')
-    grams.innerHTML = `${size}${unit}`
-    select.appendChild(grams)
-    listSelect.appendChild(select)
+        const grams = document.createElement('option')
+        grams.innerHTML = `${size}${unit}`
+        select.appendChild(grams)
+        listSelect.appendChild(select)
 
     } else if (unit === "ml") {
-    const mliters = document.createElement('option')
-    const ounces = document.createElement('option')
-    mliters.innerHTML = `${size}${unit}`
-    ounces.innerHTML = size/30 + "oz"
-    select.appendChild(mliters)
-    select.appendChild(ounces)
-    listSelect.appendChild(select)
+        const mliters = document.createElement('option')
+        const ounces = document.createElement('option')
+        mliters.innerHTML = `${size}${unit}`
+        ounces.innerHTML = size/30 + "oz"
+        select.appendChild(mliters)
+        select.appendChild(ounces)
+        listSelect.appendChild(select)
 
     } else {
         const setAmount = document.createElement('option')
@@ -152,7 +164,7 @@ function extractFacts(facts) {
     foodDes.innerText = facts.description
 
     //add p tag and carb amount to p
-    let carbAmount = document.createElement('p')
+    let carbAmount = document.createElement('div')
     carbAmount.classList.add('carb-amount')
     let starter = facts.labelNutrients.carbohydrates.value
     // carbAmount.innerHTML = facts.labelNutrients.carbohydrates.value

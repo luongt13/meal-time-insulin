@@ -339,8 +339,8 @@ To create a tool to calculate units of insulin to administer based on total carb
 | **INFRASTRUCTURE:** |
 | Set up HTML, CSS, JS      | H |  3  | TBD | TBD |
 | **DATA:** |
-| API                       | H |  6  | 6 | TBD |
-| Work with JS and DOM      | H |  4  | 3 | TBD |
+| API                       | H |  6  | 5 | TBD |
+| Work with JS and DOM      | H |  4  | 4 | TBD |
 | Connect data with page    | H |  3  | 3 | TBD |
 | **DESIGN:** |
 | Responsive CSS            | H |  6  | TBD | TBD |
@@ -348,9 +348,9 @@ To create a tool to calculate units of insulin to administer based on total carb
 | Add colors/images         | L |  4  | TBD | TBD |
 | **FUNCTION:** |
 | Functional form           | H |  4  | TBD | TBD |
-| Functional list that adds food and carbohydrates | H | 5 | TBD | TBD |
+| Functional list that adds food and carbohydrates | H | 5 | 4 | TBD |
 | Functional buttons        | H |  2  | TBD | TBD | 
-| Adjust serving size       | H |  5  | TBD | TBD |
+| Adjust serving size       | H |  5  | 2 | TBD |
 | Add and calculate insulin to carbohydrate ratio | H | 3 | TBD | TBD |
 | **TOTAL:**                |   |**48**|**TBD**|**TBD**| 
 
