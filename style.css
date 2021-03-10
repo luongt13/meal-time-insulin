@@ -17,12 +17,18 @@ body {
 
 header {
     background-color: #33393D;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
     text-transform: uppercase;
     width: 100%;
 }
 
+header img {
+    max-width: 60%;
+}
 /* text inside next buttons */
 a {
     text-decoration: none;
@@ -44,7 +50,7 @@ button {
 
 /* headers */
 h1, h2, h3 {
-    margin: 0 5px 5px 5px;
+    margin: 50px 5px 5px 5px;
  }
 
 h1 {
@@ -54,12 +60,11 @@ h1 {
 
 h2 {
     font-size: calc(14px + 2vw);
-    margin-top: 10px;
 }
 
 h3 {
     font-size: calc(12px + 1vw);
-    margin: 5px 5px 5px 5px;
+    margin: 5px 5px 15px 5px;
 }
 
 h4 {
@@ -98,6 +103,8 @@ select {
 .space {
     display: none;   
     height: 150px; 
+    margin-top: 100px;
+    
 }
 
 /* https://www.w3schools.com/css/css_overflow.asp */
@@ -177,6 +184,7 @@ select {
 
 .added p {
     margin: 0;
+    padding: 5px
 }
 
 .total-carbs {

@@ -14,18 +14,21 @@
 <body>
     <header>
         <h1>Meal Time Insulin</h1>
+        <img src="./assets/plates.png"/>
     </header>
-    <div class="space"></div>
+    <div class="space">
+        <a href="#search-section"><button id="started">Get Started</button></a>
+    </div>
     <div>
         <h2>What is on my plate?</h2>
         <h3>Search for each food item and add it to your list</h3>
     </div>
     <form id="search-section">
         <input type="text" id="search" placeholder="Search For Foods"/>
-        <button id="submit">Search</button>
+        <a href="#next1"><button id="submit">Search</button></a>
     </form>
     <section class="results"></section>
-    <button class="next" id="next1"><a href="#one">Next</a></button>
+    <a href="#one"><button class="next" id="next1">Next</button></a>
     <div id="one">
         <h2>How much of each do I have?</h2>
         <h3>Adjust the serving size to get total carbohydrates</h3>
@@ -34,7 +37,7 @@
             </form>
         </section>
     </div>
-    <button class="next" id="next2"><a href="#two">Next</a></button>
+    <a href="#two"><button class="next" id="next2">Next</button></a>
     <div class="steps" id="two">
         <h2>How many units of insulin do I need?</h2>
         <h3>Enter your insulin to carbohydrate ratio given by your primary team</h3>
