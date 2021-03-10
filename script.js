@@ -24,6 +24,7 @@ function removeItems() {
 function displayUnits(unitsInsulin) {
     units.innerHTML = unitsInsulin
 }
+
 //calculate based on input and carb ratio
 function calculate(totalCarb, carbRatio) {
   let unitsInsulin = totalCarb/carbRatio
@@ -46,9 +47,12 @@ function displayTotal(total) {
     if (isNaN(total)) {
     } else {
         let totalCarbs = document.createElement('div')
+        // let heading = document.createElement('h4')
+        // heading.innerHTML = "Total Carbohydrates: "
+        // totalCarbs.appendChild(heading)
         totalCarbs.classList.add('total-carbs')
         list.removeChild(list.lastChild)
-        totalCarbs.innerHTML = `Total Carbohydrate: ${total}`
+        totalCarbs.innerHTML = total
         list.appendChild(totalCarbs)
     }
 }
