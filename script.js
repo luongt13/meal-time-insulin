@@ -24,10 +24,17 @@ function removeItems() {
     }
 }
 
+function remove() {
+    while (units.firstChild) {
+        units.removeChild(units.firstChild)
+    }
+}
+
 //display units of insulin
 function displayUnits(unitsInsulin) {
     let endUnit = document.createElement('div')
     endUnit.innerHTML = unitsInsulin
+    remove()
     units.appendChild(endUnit)
 }
 

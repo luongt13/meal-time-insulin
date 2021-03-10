@@ -22,6 +22,30 @@ header {
     padding: 10px;
 }
 
+h1, h2, h3 {
+    margin: 0 5px 5px 5px;
+ }
+
+ h1 {
+    color: white;
+    font-size: calc(16px + 3vw);
+}
+
+h2 {
+    font-size: calc(14px + 2vw);
+    margin-top: 10px;
+}
+
+h3 {
+    font-size: calc(12px + 1vw);
+}
+
+h4 {
+    text-transform: uppercase;
+    font-size: 3vw;
+    margin-bottom: 5px; 
+}
+
 input {
     box-shadow: 0 0 10px#282828;
     border: none;
@@ -33,14 +57,9 @@ input {
     box-shadow: 0 0 10px#282828;
 } */
 
-h1, h2, h3 {
-   margin: 5px;
-   padding: 10px;
-}
 
-h1 {
-    color: white;
-}
+
+
 /* h2 {
     background-color: palevioletred;
 } */
@@ -91,7 +110,7 @@ p {
 
 #search-section {
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
 }
 
 button {
@@ -157,13 +176,15 @@ a {
 }
 
 .total-carbs {
-    /* background-color: black; */
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
     height: 50px;
     font-weight: bold;
+    color: white;
+    margin-top: 5px;
 }
 
 .insulin {
@@ -199,7 +220,7 @@ a {
 
 #custom-list {
     color: black;
-    width: 80%;
+    /* width: 80%; */
     margin: 0 auto;
 }
 
@@ -236,16 +257,19 @@ a {
 
 #units {
     width: 80%;
+    margin: 0 auto;
 }
 
 #units div {
-    /* background-color: black; */
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
     height: 50px;
     font-weight: bold;
+    color: white;
+    /* margin: 0 auto; */
 }
 
 #one {
@@ -254,4 +278,8 @@ a {
 
 #two {
     display: none;
+}
+
+#main {
+    margin-top: 50px;
 }
