@@ -14,6 +14,8 @@ let carbInput = document.querySelector('#carb')
 let units = document.querySelector('#units')
 let nextBtn = document.querySelector('#next1')
 let nextBtn2 = document.querySelector('#next2')
+let section1 = document.querySelector('#one')
+let section2 = document.querySelector('#two')
 
 //remove items
 function removeItems() {
@@ -167,10 +169,7 @@ function displayCommonResults(foods) {
         item.appendChild(icon)
         resultsSection.appendChild(item)
 
-        icon.addEventListener('click', ()=> {
-            addToList(setDetails)
-            nextBtn2.style.display = "block"
-        })
+        icon.addEventListener('click', () => addToList(setDetails))
     })
 }
 
@@ -220,10 +219,7 @@ function displayBrandedResults(brandedFoods) {
         resultsSection.appendChild(item)
 
         //when icon is clicked
-        icon.addEventListener('click', ()=> {
-            addToList(setDetails)
-            nextBtn2.style.display = "block"
-        })
+        icon.addEventListener('click', () => addToList(setDetails))
     })
 }
 
@@ -252,6 +248,13 @@ form.addEventListener('submit', (event) => {
     getFoods(foodItem)
     nextBtn.style.display = "block"
 })
+
+nextBtn.addEventListener('click', () => {
+    nextBtn2.style.display = "block"
+    section1.style.display = "block"
+})
+
+nextBtn2.addEventListener('click', ()=> section2.style.display = "block")
 
 
 // //api call related things
