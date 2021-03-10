@@ -15,55 +15,40 @@
     <header>
         <h1>Meal Time Insulin</h1>
     </header>
-    <div class="steps" id="main">
+    <div>
         <h2>What's on your plate?</h2>
         <h3>Search for each food item and add it to your list</h3>
-  
     </div>
     <form id="search-section">
-        <!-- <label for="search"></label> -->
         <input type="text" id="search" placeholder="Search For Foods"/>
         <button id="submit">Search</button>
     </form>
-    <section class="results" id="result-section">
-
-    </section>
-
+    <section class="results" id="result-section"></section>
     <button class="next" id="next1"><a href="#one">Next</a></button>
-    <div class="steps" id="one">
+    <div id="one">
         <h2>How much of each food do you have?</h2>
         <h3>Adjust the serving size to find out total carbohydrates</h3>
-    
-   
-    <section class="list">
-    <form id="custom-list">
-
-    </form>
-    </section>
-</div>
+        <section class="list">
+            <form id="custom-list">
+            </form>
+        </section>
+    </div>
     <button class="next" id="next2"><a href="#two">Next</a></button>
     <div class="steps" id="two">
         <h2>How many units of insulin you need before you eat?</h2>
         <h3>Enter your insulin to carbohydrate ratio given by your primary team</h3>
-   
-    
-    <!-- <div class="carbohydrates">
-    </div> -->
-
-    <h4>Insulin : Carbohydrate</h4>
-    <form id="insulin-to-carb">
-        <div class="insulin">
-            <!-- <h4>Insulin:</h4> -->
-            <p>1</p>
-        </div>
-        <div class="carbo">
-            <!-- <h4>Carbohydrate</h4>             -->
-            <input type="number" id="carb" placeholder="Enter Number"/>
-        </div>
-        <button id="calculate">Calculate</button>
-    </form>
-    <div id="units"></div>
-    <h6>Remember to round the units based on what your primary team set</h6>
-</div>
+        <h4>Insulin : Carbohydrate</h4>
+        <form id="insulin-to-carb">
+            <div class="insulin">
+                <p>1</p>
+            </div>
+            <div class="carbo">
+                <input type="number" id="carb" placeholder="Enter Number"/>
+            </div>
+            <button id="calculate">Calculate</button>
+        </form>
+        <div id="units"></div>
+        <h6>Remember to round the units based on what your primary team set</h6>
+    </div>
 </body>
 </html>

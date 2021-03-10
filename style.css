@@ -1,3 +1,4 @@
+/* general */
 html, body {
     margin: 0;
     padding: 0;
@@ -10,23 +11,25 @@ body {
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
-    background-color: #708090;
+    background-color: #EDECEC;
     color: black;
 }
 
 header {
-    background-color: black;
+    background-color: #33393D;
     width: 100%;
     text-align: center;
     text-transform: uppercase;
     padding: 10px;
+    /* border: 5px solid #2F4F4F; */
 }
 
+/* headers */
 h1, h2, h3 {
     margin: 0 5px 5px 5px;
  }
 
- h1 {
+h1 {
     color: white;
     font-size: calc(16px + 3vw);
 }
@@ -42,8 +45,19 @@ h3 {
 
 h4 {
     text-transform: uppercase;
-    font-size: 3vw;
+    font-size: calc(10px + 1vw);
     margin-bottom: 5px; 
+}
+
+button {
+    border: none;
+    background-color: #00274C;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 0 5px#000;
 }
 
 input {
@@ -51,35 +65,42 @@ input {
     border: none;
     padding: 10px 20px;
     border-radius: 25px;
+    text-align: center;
 }
-
-/* input:hover {
-    box-shadow: 0 0 10px#282828;
-} */
-
-
-
-
-/* h2 {
-    background-color: palevioletred;
-} */
-
-/* h3 { background-color: purple;} */
 
 select {
     border: none;
-    background-color: #4682B4;
+    background-color: #33393D;
+    color: white;
     border-radius: 25px;
     padding: 3px;
     margin: 5px;
+    box-shadow: 0 0 5px#000;
+}
+
+/* text inside next buttons */
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.next {
+    display: none;
+    margin: 15px;
+}
+
+p {
+    font-weight: bold;
 }
 
 /* https://www.w3schools.com/css/css_overflow.asp */
+/* list of search results */
 .results {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
     margin-top: 10px;
-    width: 80%;
+    width: 100%;
     max-height: 450px;
     overflow-y: scroll;
 }
@@ -92,47 +113,21 @@ select {
     align-items: center;
     padding: 10px;
     margin: 5px 0 5px 0;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
+    width: 80%;
+    background-color: white;
+    /* border: 3px solid black; */
     border-radius: 25px;
     text-align: left;
-    /* justify-content: space-between; */
+    box-shadow: 0 0 5px#000;
 }
 
+/* words inside each result */
 .text {
     width: 100%;
     margin-left: 3%;
 }
 
-p {
-    font-weight: bold;
-}
-
-#search-section {
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-button {
-    border: none;
-    background-color: #2F4F4F;
-    padding: 10px 20px;
-    color: white;
-    border-radius: 25px;
-    text-transform: uppercase;
-    font-weight: bold;
-    box-shadow: 0 0 5px#000;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-/* button:hover {
-    box-shadow: 0 0 5px#000;
-} */
-
+/* icon side result */
 .icon {
     height: 50px;
     width: 50px;
@@ -148,12 +143,10 @@ a {
     height: auto
 }
 
+/* custom list */
 .list {
     width: 100%;
-}
-
-.carb-amount {
-    font-weight: bold;
+    margin: 10px 0 10px 0;
 }
 
 .added {
@@ -162,29 +155,30 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5px 0 5px 0; 
+    margin: 10px 0 10px 0; 
     padding: 10px;
+    box-shadow: 0 0 5px#000;
+}
+
+.carb-amount {
+    font-weight: bold;
 }
 
 .added p {
     margin: 0;
 }
 
-.next {
-    display: none;
-    margin: 15px;
-}
-
 .total-carbs {
-    background-color: black;
+    background-color: #FFCB05;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
     height: 50px;
     font-weight: bold;
-    color: white;
-    margin-top: 5px;
+    color: black;
+    margin: 5px auto;
+    width: 80%;
 }
 
 .insulin {
@@ -211,16 +205,32 @@ a {
     flex-direction: column;
     width: 65%;
     align-items: flex-start;
-
 }
 
-.carbo label {
-    margin-top: 16px;
+#main {
+    margin-top: 50px;
+}
+#one {
+    display: none;
+    width: 100%;
+}
+
+#two {
+    display: none;
+}
+
+#search-section {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#search {
+    margin: 5px 0 5px 0;
 }
 
 #custom-list {
     color: black;
-    /* width: 80%; */
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -235,7 +245,7 @@ a {
 
 #qty[type="number"]{
     /* width: 20px;   */
-    margin: 5px 0 5px 0; 
+    margin: 10px 0 10px 0;
 }
 
 #carb[type=number]{
@@ -245,10 +255,6 @@ a {
 
 #submit {
     margin: 15px;
-}
-
-#search {
-    margin: 5px 0 5px 0;
 }
 
 #calculate {
@@ -261,25 +267,12 @@ a {
 }
 
 #units div {
-    background-color: black;
+    background-color: #FFCB05;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
     height: 50px;
     font-weight: bold;
-    color: white;
-    /* margin: 0 auto; */
-}
-
-#one {
-    display: none;
-}
-
-#two {
-    display: none;
-}
-
-#main {
-    margin-top: 50px;
+    color: black;
 }
