@@ -337,9 +337,9 @@ To create a tool to calculate units of insulin to administer based on total carb
 | Component | Priority | Estimated Time (hours) | Time Invested (hours) | Actual Time (hours) |
 | --------- | :----: | :----: | :----: | :----: |
 | **INFRASTRUCTURE:** |
-| Set up HTML, CSS, JS      | H |  3  | TBD | TBD |
+| Set up HTML, CSS, JS      | H |  3  | 5 | TBD |
 | **DATA:** |
-| API                       | H |  6  | 5 | TBD |
+| API                       | H |  6  | 7 | TBD |
 | Work with JS and DOM      | H |  4  | 4 | TBD |
 | Connect data with page    | H |  3  | 3 | TBD |
 | **DESIGN:** |
@@ -347,9 +347,9 @@ To create a tool to calculate units of insulin to administer based on total carb
 | Layout                    | H |  3  | TBD | TBD |
 | Add colors/images         | L |  4  | TBD | TBD |
 | **FUNCTION:** |
-| Functional form           | H |  4  | 1 | TBD |
-| Functional list that adds food and carbohydrates | H | 5 | 4 | TBD |
-| Functional buttons        | H |  2  | TBD | TBD | 
+| Functional form           | H |  4  | 3 | TBD |
+| Functional list that adds food and carbohydrates | H | 5 | 6 | TBD |
+| Functional buttons        | H |  2  | 3 | TBD | 
 | Adjust serving size       | H |  5  | 2 | TBD |
 | Add and calculate insulin to carbohydrate ratio | H | 3 | TBD | TBD |
 | **TOTAL:**                |   |**48**|**TBD**|**TBD**| 

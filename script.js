@@ -22,7 +22,9 @@ function removeItems() {
 
 //display units of insulin
 function displayUnits(unitsInsulin) {
-    units.innerHTML = unitsInsulin
+    let endUnit = document.createElement('div')
+    endUnit.innerHTML = unitsInsulin
+    units.appendChild(endUnit)
 }
 
 //calculate based on input and carb ratio

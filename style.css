@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    font-family: 'Merriweather', serif;
 }
 
 body {
@@ -43,7 +44,7 @@ select {
     flex-flow: row wrap;
     margin-top: 10px;
     width: 80%;
-    height: 450px;
+    max-height: 450px;
     overflow: scroll;
 }
 
@@ -65,7 +66,6 @@ select {
 .text {
     width: 100%;
     margin-left: 3%;
-    background-color: cyan;
 }
 
 p {
@@ -132,7 +132,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 40%;
 }
 
 .insulin p {
@@ -143,13 +143,16 @@ button {
     padding: 9px 20px;
     margin: 5px 0 5px 5px;
     font-weight: 300;
+    width: 15px;
+    text-align: center;
 }
 
 .carbo {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 60%;
     align-items: center;
+
 }
 
 .carbo label {
@@ -164,7 +167,7 @@ button {
     width: 80%;
     display: flex;
     flex-flow: row wrap;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     height: 150px;
     justify-content: center;
 }
@@ -175,6 +178,24 @@ button {
 }
 
 #carb[type=number]{
-    margin: 5px 0 5px 0; 
+    margin: 5px 0 5px 0;
+    text-align: center;
 }
 
+#calculate {
+    margin: 20px auto;
+}
+
+#units {
+    width: 80%;
+    margin-bottom: 100px;
+}
+#units div {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    height: 50px;
+    font-weight: bold;
+}
