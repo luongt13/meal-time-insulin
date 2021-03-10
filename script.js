@@ -5,6 +5,7 @@ const base_url = `${domain}?${detail}&query=`
 
 //selecting elements 
 let form = document.querySelector('form')
+let searchBtn = document.querySelector('#submit')
 let input = document.querySelector('#search')
 let resultsSection = document.querySelector('.results')
 let list = document.querySelector('.list')
@@ -76,7 +77,7 @@ function addTotal() {
     let getAmounts = document.querySelectorAll('.carb-amount')
     getAmounts.forEach(value => {
         let values = value.innerHTML
-        let int = parseInt(values)
+        let int = Number(values)
         array.push(int)
     })
     let total = array.reduce((accumulator, currentValue) => accumulator + currentValue)
@@ -259,12 +260,13 @@ async function getFoods(query) {
     }
 
 //when search button is clicked
-form.addEventListener('submit', (event) => {
-    event.preventDefault()
+searchBtn.addEventListener('click', async (event) => {
+    // event.preventDefault()
     let foodItem = input.value
     removeItems()
-    getFoods(foodItem)
+    await getFoods(foodItem)
     nextBtn.style.display = "block"
+    window.scrollTo(0, resultsSection.offsetTop)
 })
 
 nextBtn.addEventListener('click', () => {
