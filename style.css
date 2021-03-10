@@ -297,10 +297,12 @@ p {
     button:hover {
         box-shadow: 0 0 5px#000;
     }
+
     input {
         box-shadow: none;
         border: 1px solid gray;
     }
+
     input:hover {
         box-shadow: 0 0 10px#282828;
 
@@ -309,8 +311,23 @@ p {
     .result-item {
         height: 100px;
     }
+
     .thumbnail {
         max-height: 100px;
         width: auto;
+    }
+    .next {
+        margin-bottom: 100px;
+    }
+    .insulin {
+        width: 45%;
+    }
+
+    .carbo {
+        width: 55%;
+    }
+
+    #two {
+        width: 100%;
     }
 }
