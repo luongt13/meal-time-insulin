@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Merriweather', serif;
+    text-align: center;
 }
 
 body {
@@ -10,25 +11,41 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #708090;
-    color: white;
+    color: black;
 }
 
 header {
     background-color: black;
     width: 100%;
     text-align: center;
+    text-transform: uppercase;
+    padding: 10px;
 }
 
 input {
-    border: 3px solid black;
+    box-shadow: 0 0 10px#282828;
+    border: none;
     padding: 10px 20px;
     border-radius: 25px;
 }
 
+/* input:hover {
+    box-shadow: 0 0 10px#282828;
+} */
+
 h1, h2, h3 {
-   margin: 0;
+   margin: 5px;
    padding: 10px;
 }
+
+h1 {
+    color: white;
+}
+/* h2 {
+    background-color: palevioletred;
+} */
+
+/* h3 { background-color: purple;} */
 
 select {
     border: none;
@@ -45,7 +62,7 @@ select {
     margin-top: 10px;
     width: 80%;
     max-height: 450px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .result-item {
@@ -57,9 +74,9 @@ select {
     padding: 10px;
     margin: 5px 0 5px 0;
     width: 100%;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 25px;
-
+    text-align: left;
     /* justify-content: space-between; */
 }
 
@@ -72,14 +89,25 @@ p {
     font-weight: bold;
 }
 
+#search-section {
+    display: flex;
+    flex-direction: column;
+}
+
 button {
     border: none;
-    background-color: #4682B4;
+    background-color: #2F4F4F;
     padding: 10px 20px;
     color: white;
     border-radius: 25px;
     text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 0 5px#000;
 }
+
+/* button:hover {
+    box-shadow: 0 0 5px#000;
+} */
 
 .icon {
     height: 50px;
@@ -118,8 +146,12 @@ button {
     margin: 0;
 }
 
+.next {
+    display: none;
+}
+
 .total-carbs {
-    background-color: black;
+    /* background-color: black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,17 +163,17 @@ button {
 .insulin {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 40%;
+    align-items: flex-end;
+    width: 35%;
 }
 
 .insulin p {
     background-color: white;
     color: black;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     border-radius: 25px;
-    padding: 9px 20px;
-    margin: 5px 0 5px 5px;
+    padding: 7px 20px;
+    margin: 5px 5px 5px 0px;
     font-weight: 300;
     width: 15px;
     text-align: center;
@@ -150,8 +182,8 @@ button {
 .carbo {
     display: flex;
     flex-direction: column;
-    width: 60%;
-    align-items: center;
+    width: 65%;
+    align-items: flex-start;
 
 }
 
@@ -167,7 +199,6 @@ button {
     width: 80%;
     display: flex;
     flex-flow: row wrap;
-    margin-bottom: 50px;
     height: 150px;
     justify-content: center;
 }
@@ -182,16 +213,24 @@ button {
     text-align: center;
 }
 
+#submit {
+    margin: 15px;
+}
+
+#search {
+    margin: 5px 0 5px 0;
+}
+
 #calculate {
     margin: 20px auto;
 }
 
 #units {
     width: 80%;
-    margin-bottom: 100px;
 }
+
 #units div {
-    background-color: black;
+    /* background-color: black; */
     display: flex;
     justify-content: center;
     align-items: center;

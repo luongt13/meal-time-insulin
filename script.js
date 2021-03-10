@@ -12,6 +12,8 @@ let listSelect = document.querySelector('#custom-list')
 let endInput = document.querySelector('#insulin-to-carb')
 let carbInput = document.querySelector('#carb')
 let units = document.querySelector('#units')
+let nextBtn = document.querySelector('#next1')
+let nextBtn2 = document.querySelector('#next2')
 
 //remove items
 function removeItems() {
@@ -165,7 +167,10 @@ function displayCommonResults(foods) {
         item.appendChild(icon)
         resultsSection.appendChild(item)
 
-        icon.addEventListener('click', ()=> addToList(setDetails))
+        icon.addEventListener('click', ()=> {
+            addToList(setDetails)
+            nextBtn2.style.display = "block"
+        })
     })
 }
 
@@ -215,7 +220,10 @@ function displayBrandedResults(brandedFoods) {
         resultsSection.appendChild(item)
 
         //when icon is clicked
-        icon.addEventListener('click', ()=> addToList(setDetails))
+        icon.addEventListener('click', ()=> {
+            addToList(setDetails)
+            nextBtn2.style.display = "block"
+        })
     })
 }
 
@@ -242,6 +250,7 @@ form.addEventListener('submit', (event) => {
     let foodItem = input.value
     removeItems()
     getFoods(foodItem)
+    nextBtn.style.display = "block"
 })
 
 
