@@ -169,13 +169,12 @@ function displayCommonResults(foods) {
             })
        
         //append
-        item.appendChild(img)
+        item.appendChild(icon)
         text.appendChild(name)
         text.appendChild(serving)
         item.appendChild(text)
-        item.appendChild(icon)
+        item.appendChild(img)
         resultsSection.appendChild(item)
-
         icon.addEventListener('click', () => addToList(setDetails))
     })
 }
@@ -218,11 +217,11 @@ function displayBrandedResults(brandedFoods) {
             })
 
         //append
-        item.appendChild(img)
+        item.appendChild(icon)
         text.appendChild(name)
         text.appendChild(serving)
         item.appendChild(text)
-        item.appendChild(icon)
+        item.appendChild(img)
         resultsSection.appendChild(item)
 
         //when icon is clicked
