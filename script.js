@@ -91,6 +91,10 @@ function addToList(object) {
     let select = document.createElement('select')
     //create input element
     let servingInput = document.createElement('input')
+    //delete icon
+    let deleteIcon = document.createElement('img')
+    deleteIcon.classList.add('delete')
+    deleteIcon.src = "./assets/delete-icon.png"
     //add type to input
     servingInput.type = "number"
     servingInput.placeholder = "Enter Number"
@@ -119,8 +123,15 @@ function addToList(object) {
     carbAmount.classList.add('carb-amount')
     let starter = object.carb
     container.appendChild(carbAmount)
+    container.appendChild(deleteIcon)
 
     listSelect.appendChild(container)
+
+    deleteIcon.addEventListener('click', (event)=> {
+        event.target.parentNode.remove()
+        console.log(event)
+    })
+
     //update carb when quantity is added
     servingInput.addEventListener('input', (event)=> {
         let multiplier = event.target.value

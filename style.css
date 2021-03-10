@@ -1,27 +1,45 @@
 /* general */
 html, body {
+    font-family: 'Merriweather', serif;
     margin: 0;
     padding: 0;
-    font-family: 'Merriweather', serif;
     text-align: center;
 }
 
 body {
-    display: flex;
-    flex-flow: column wrap;
     align-items: center;
-    justify-content: center;
     background-color: #EDECEC;
     color: black;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
 }
 
 header {
     background-color: #33393D;
-    width: 100%;
+    padding: 10px;
     text-align: center;
     text-transform: uppercase;
-    padding: 10px;
-    /* border: 5px solid #2F4F4F; */
+    width: 100%;
+}
+
+/* text inside next buttons */
+a {
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    border: none;
+    background-color: #00274C;
+    border-radius: 25px;
+    box-shadow: 0 0 5px#000;    
+    color: white;
+    height: 40px;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    width: 150px;
 }
 
 /* headers */
@@ -50,26 +68,16 @@ h4 {
     margin-bottom: 5px; 
 }
 
-button {
+input {
     border: none;
-    background-color: #00274C;
-    padding: 10px 20px;
-    height: 40px;
-    width: 150px;
-    color: white;
     border-radius: 25px;
-    text-transform: uppercase;
-    font-weight: bold;
-    box-shadow: 0 0 5px#000;
+    box-shadow: 0 0 10px#282828;
+    padding: 10px 20px;
+    text-align: center;
 }
 
-input {
-    box-shadow: 0 0 10px#282828;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-align: center;
-    background-color: ;
+p {
+    font-weight: bold;
 }
 
 select {
@@ -82,24 +90,14 @@ select {
     box-shadow: 0 0 5px#000;
 }
 
-/* text inside next buttons */
-a {
-    text-decoration: none;
-    color: white;
-}
-
 .next {
     display: none;
     margin: 15px;
 }
 
-p {
-    font-weight: bold;
-}
-
 .space {
-    height: 150px; 
     display: none;   
+    height: 150px; 
 }
 
 /* https://www.w3schools.com/css/css_overflow.asp */
@@ -109,46 +107,51 @@ p {
     flex-flow: row wrap;
     justify-content: center;
     margin-top: 10px;
-    width: 80%;
     max-height: 450px;
     overflow-y: scroll;
+    width: 80%;
 }
 
 .result-item {
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 0 5px#000;
     color: black;
     display: flex;
     flex-flow: row nowrap;
     height: auto;
-    align-items: center;
     padding: 10px;
     margin: 5px 5px 5px 5px;
-    width: 100%;
-    background-color: white;
-    border-radius: 25px;
     text-align: left;
-    box-shadow: 0 0 5px#000;
+    width: 100%;
 }
 
 /* words inside each result */
 .text {
-    width: 100%;
     margin-left: 3%;
+    width: 100%;
 }
 
 /* icon side result */
 .icon {
     height: 50px;
     width: 50px;
-    align-self: flex-end;
 }
 
-.icon:hover {
+.icon:hover, .delete:hover {
     opacity: 0.5
 }
 
+.delete {
+    width: 35px;
+    height: 35px;
+    align-self: flex-end;
+}
+
 .thumbnail {
-    width: 20%;
     height: auto;
+    width: 20%;
 }
 
 /* custom list */
@@ -158,14 +161,14 @@ p {
 }
 
 .added {
+    align-items: center;
     background-color: white;
     border-radius: 25px;
+    box-shadow: 0 0 5px#000;
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin: 10px 0 10px 0; 
     padding: 10px;
-    box-shadow: 0 0 5px#000;
 }
 
 .carb-amount {
@@ -177,47 +180,48 @@ p {
 }
 
 .total-carbs {
-    background-color: #FFCB05;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    background-color: #FFCB05;
     border-radius: 25px;
-    height: 50px;
-    font-weight: bold;
     color: black;
+    display: flex;
+    font-weight: bold;
+    height: 50px;
+    justify-content: center;
     margin: 5px auto;
     width: 80%;
 }
 
 .insulin {
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     width: 35%;
 }
 
 .insulin p {
     background-color: white;
-    color: black;
-    /* border: 3px solid black; */
     border-radius: 25px;
-    padding: 7px 20px;
-    margin: 5px 5px 5px 0px;
+    color: black;
     font-weight: 300;
-    width: 15px;
+    margin: 5px 5px 5px 0px;
+    padding: 7px 20px;
     text-align: center;
+    width: 15px;
+
 }
 
 .carbo {
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
     width: 65%;
-    align-items: flex-start;
 }
 
 #main {
     margin-top: 50px;
 }
+
 #one {
     display: none;
     width: 100%;
@@ -238,8 +242,8 @@ p {
 
 #custom-list {
     color: black;
-    width: 80%;
     margin: 0 auto;
+    width: 80%;
 }
 
 #insulin-to-carb {
@@ -270,19 +274,19 @@ p {
 }
 
 #units {
-    width: 80%;
     margin: 0 auto;
+    width: 80%;
 }
 
 #units div {
-    background-color: #FFCB05;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    background-color: #FFCB05;
     border-radius: 25px;
-    height: 50px;
-    font-weight: bold;
     color: black;
+    display: flex;
+    font-weight: bold;
+    height: 50px;
+    justify-content: center;
 }
 
 @media only screen and (min-width: 600px) {
@@ -299,13 +303,12 @@ p {
     }
 
     input {
-        box-shadow: none;
         border: 1px solid gray;
+        box-shadow: none;
     }
 
     input:hover {
         box-shadow: 0 0 10px#282828;
-
     }
 
     .result-item {
@@ -316,9 +319,17 @@ p {
         max-height: 100px;
         width: auto;
     }
+
     .next {
         margin-bottom: 100px;
     }
+
+    /* .added {
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        padding-left: 5%;
+    } */
+
     .insulin {
         width: 45%;
     }
@@ -330,4 +341,9 @@ p {
     #two {
         width: 100%;
     }
+
+    #qty[type="number"] {
+        margin: 0 5px 0 5px;
+    }
+    
 }
