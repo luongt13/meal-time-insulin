@@ -339,6 +339,15 @@ select {
         margin: 25px 0 25px 0;
 
     }
+
+    select {
+        box-shadow: none;
+    }
+
+    select:hover {
+        box-shadow: 0 0 5px#000;
+    }
+    
     .space {
         display: block;    
     }
