@@ -93,7 +93,8 @@ function addToList(object) {
     let container = document.createElement('div')
     container.classList.add('added')
     //create select element
-    let select = document.createElement('select')
+    let select = document.createElement('div')
+    select.classList.add('serving-size')
     //create input element
     let servingInput = document.createElement('input')
     //delete icon
@@ -118,7 +119,7 @@ function addToList(object) {
     container.appendChild(servingInput)
 
     //add option and serving sizes
-    const setAmount = document.createElement('option')
+    const setAmount = document.createElement('p')
     setAmount.innerHTML = `${unit} (${size}g)`
     select.appendChild(setAmount)
     container.appendChild(select)
@@ -262,6 +263,7 @@ async function getFoods(query) {
         })
         displayCommonResults(response.data.common)
         displayBrandedResults(response.data.branded)
+        console.log(response.data.common)
         } catch {
              alert("No Food Found")
         }

@@ -177,6 +177,19 @@ select {
 }
 
 /* custom list */
+
+.serving-size {
+    background-color: #33393D;
+    color: white;
+    border-radius: 25px;
+    padding: 3px;
+    margin: 5px;
+}
+
+.serving-size p {
+    font-size: 12px;
+}
+
 .list {
     width: 100%;
     margin: 10px 0 10px 0;
@@ -189,12 +202,15 @@ select {
     box-shadow: 0 0 5px#000;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin: 10px 0 10px 0; 
     padding: 10px;
 }
 
 .carb-amount {
     font-weight: bold;
+    margin-bottom: -25px;
+    text-align: center;
 }
 
 .added p {
@@ -351,12 +367,6 @@ select {
     .next {
         margin-bottom: 100px;
     }
-
-    /* .added {
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-        padding-left: 5%;
-    } */
 
     .insulin {
         width: 45%;
