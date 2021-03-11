@@ -77,11 +77,10 @@ function addTotal() {
     let getAmounts = document.querySelectorAll('.carb-amount')
     getAmounts.forEach(value => {
         let values = value.innerHTML
-        let int = Number(values)
-        array.push(int)
+        array.push(Number(values))
     })
     let total = array.reduce((accumulator, currentValue) => accumulator + currentValue)
-    displayTotal(total)
+    displayTotal(Number(total.toFixed(1)))
 }
 
 //extract and add serving size, serving size unit, and carbs
@@ -122,12 +121,14 @@ function addToList(object) {
     //add div tag
     let carbAmount = document.createElement('div')
     carbAmount.classList.add('carb-amount')
+    // let starter = Number(object.carb.toFixed(1))
     let starter = object.carb
+    console.log(starter)
     container.appendChild(carbAmount)
     container.appendChild(deleteIcon)
-
     listSelect.appendChild(container)
 
+    //delete list item and subtract the amount from the total
     deleteIcon.addEventListener('click', (event)=> {
         event.target.parentNode.remove()  
         let test = document.querySelector('.total-carbs')
@@ -138,7 +139,7 @@ function addToList(object) {
     servingInput.addEventListener('input', (event)=> {
         let multiplier = event.target.value
         let newAmount = starter * multiplier
-        carbAmount.innerHTML = newAmount
+        carbAmount.innerHTML = Number(newAmount.toFixed(1))
         addTotal()
     })
 }
@@ -146,7 +147,6 @@ function addToList(object) {
 //display for common foods
 function displayCommonResults(foods) {
     foods.forEach(food => {
-
         //create elements
         const item = document.createElement('div')
         item.classList.add('result-item')
@@ -177,9 +177,10 @@ function displayCommonResults(foods) {
         //get specific carb amount for food item
         food.full_nutrients.forEach(carb => {
             if (carb.attr_id === 205) {
-               setDetails.carb = carb.value
+            // setDetails.carb = Number(carb.value.toFixed(1))
+            setDetails.carb = carb.value
             }
-            })
+        })
        
         //append
         item.appendChild(icon)
@@ -225,8 +226,9 @@ function displayBrandedResults(brandedFoods) {
         //get specific carb amount for food item
         brandedFood.full_nutrients.forEach(carb => {
             if (carb.attr_id === 205) {
-               setDetails.carb = carb.value
-            }
+                // setDetails.carb = Number(carb.value.toFixed(1))
+                setDetails.carb = carb.value
+                }
             })
 
         //append
@@ -270,11 +272,13 @@ searchBtn.addEventListener('click', async (event) => {
     window.scrollTo(0, resultsSection.offsetTop)
 })
 
+//button/section to appear after one is clicked 
 nextBtn.addEventListener('click', () => {
     nextBtn2.style.display = "block"
     section1.style.display = "block"
 })
 
+//button to appear after one is clicked
 nextBtn2.addEventListener('click', ()=> section2.style.display = "block")
 
 
@@ -287,7 +291,6 @@ nextBtn2.addEventListener('click', ()=> section2.style.display = "block")
 // const base_url = `${domain}?api_key=${key}&${parameter1}&query=`
 // const nutrientDomain = "https://api.nal.usda.gov/fdc/v1/food/"
 // const limit = "25"
-
 
 
 // //selecting elements 
