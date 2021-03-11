@@ -17,6 +17,7 @@ let nextBtn = document.querySelector('#next1')
 let nextBtn2 = document.querySelector('#next2')
 let section1 = document.querySelector('#one')
 let section2 = document.querySelector('#two')
+let selectRound = document.querySelector('.round')
 
 //remove items
 function removeItems() {
@@ -41,8 +42,13 @@ function displayUnits(unitsInsulin) {
 
 //calculate based on input and carb ratio
 function calculate(totalCarb, carbRatio) {
-  let unitsInsulin = totalCarb/carbRatio
-  displayUnits(unitsInsulin)
+    let unitsInsulin = totalCarb/carbRatio
+    //rounding
+    if (selectRound.value === "Round to half unit") {
+        displayUnits(Math.round(unitsInsulin * 2)/2)
+    }  else if (selectRound.value === "Round to whole unit") {
+        displayUnits(Math.round(unitsInsulin))     
+    }
 }
 
 //event listener for calculate button to get total carbs and carb ratio
@@ -61,9 +67,6 @@ function displayTotal(total) {
     if (isNaN(total)) {
     } else {
         let totalCarbs = document.createElement('div')
-        // let heading = document.createElement('h4')
-        // heading.innerHTML = "Total Carbohydrates: "
-        // totalCarbs.appendChild(heading)
         totalCarbs.classList.add('total-carbs')
         list.removeChild(list.lastChild)
         totalCarbs.innerHTML = total
@@ -74,13 +77,13 @@ function displayTotal(total) {
 //add total carbs
 function addTotal() {
     let array = []
-    console.log(array)
     let getAmounts = document.querySelectorAll('.carb-amount')
     getAmounts.forEach(value => {
         array.push(Number(value.innerHTML))
     })
     let total = array.reduce((accumulator, currentValue) => accumulator + currentValue)
-    displayTotal(Number(total.toFixed(1)))
+    displayTotal(total)
+    console.log(total)
 }
 
 //extract and add serving size, serving size unit, and carbs
@@ -122,8 +125,7 @@ function addToList(object) {
     let carbAmount = document.createElement('div')
     carbAmount.classList.add('carb-amount')
     // let starter = Number(object.carb.toFixed(1))
-    let starter = object.carb
-    console.log(starter)
+    let starter = Number(object.carb.toFixed())
     container.appendChild(carbAmount)
     container.appendChild(deleteIcon)
     listSelect.appendChild(container)
@@ -133,13 +135,14 @@ function addToList(object) {
         event.target.parentNode.remove()  
         let test = document.querySelector('.total-carbs')
         test.innerHTML = document.querySelector('.total-carbs').innerHTML - event.target.previousSibling.innerHTML
+        console.log(event.target.previousSibling.innerHTML)
     })
 
     //update carb when quantity is added
     servingInput.addEventListener('input', (event)=> {
         let multiplier = event.target.value
         let newAmount = starter * multiplier
-        carbAmount.innerHTML = Number(newAmount.toFixed(1))
+        carbAmount.innerHTML = newAmount
         addTotal()
     })
 }
