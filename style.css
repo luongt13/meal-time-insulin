@@ -77,6 +77,9 @@ h4 {
     margin-bottom: 5px; 
 }
 
+h6 {
+    margin: 0;
+}
 input {
     border: none;
     border-radius: 25px;
@@ -246,6 +249,7 @@ select {
 
 #two {
     display: none;
+    margin-bottom: 50px;
 }
 
 #search-section {
@@ -356,7 +360,7 @@ select {
     }
 
     #submit {
-        margin-bottom: 100px;
+        margin-bottom: 200px;
     }
 
     #two {

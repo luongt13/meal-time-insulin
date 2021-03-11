@@ -187,7 +187,6 @@ function displayCommonResults(foods) {
         //get specific carb amount for food item
         food.full_nutrients.forEach(carb => {
             if (carb.attr_id === 205) {
-            // setDetails.carb = Number(carb.value.toFixed(1))
             setDetails.carb = carb.value
             }
         })
@@ -236,7 +235,6 @@ function displayBrandedResults(brandedFoods) {
         //get specific carb amount for food item
         brandedFood.full_nutrients.forEach(carb => {
             if (carb.attr_id === 205) {
-                // setDetails.carb = Number(carb.value.toFixed(1))
                 setDetails.carb = carb.value
                 }
             })
