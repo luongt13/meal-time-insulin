@@ -48,6 +48,8 @@ function calculate(totalCarb, carbRatio) {
         displayUnits(Math.round(unitsInsulin * 2)/2)
     }  else if (selectRound.value === "Round to whole unit") {
         displayUnits(Math.round(unitsInsulin))     
+    } else {
+        displayUnits(Number(unitsInsulin.toFixed(2)))
     }
 }
 

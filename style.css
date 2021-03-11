@@ -89,6 +89,11 @@ p {
     font-weight: bold;
 }
 
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
 select {
     border: none;
     background-color: #33393D;
