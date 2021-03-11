@@ -86,7 +86,6 @@ function addTotal() {
     })
     let total = array.reduce((accumulator, currentValue) => accumulator + currentValue)
     displayTotal(total)
-    console.log(total)
 }
 
 //extract and add serving size, serving size unit, and carbs
@@ -127,7 +126,6 @@ function addToList(object) {
     //add div tag
     let carbAmount = document.createElement('div')
     carbAmount.classList.add('carb-amount')
-    // let starter = Number(object.carb.toFixed(1))
     let starter = Number(object.carb.toFixed())
     container.appendChild(carbAmount)
     container.appendChild(deleteIcon)
