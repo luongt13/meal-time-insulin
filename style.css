@@ -27,8 +27,8 @@ header {
 }
 
 header img {
-    max-width: 60%;
-    padding: 10px;
+    max-width: 40%;
+    /* padding: 5px; */
 }
 /* text inside next buttons */
 a {
@@ -50,7 +50,7 @@ button {
 }
 
 /* headers */
-h1, h2, h3 {
+h2, h3 {
     margin: 50px 5px 5px 5px;
  }
 
@@ -59,7 +59,7 @@ h1 {
     font-family: 'Unica One', cursive;
     font-size: calc(16px + 3vw);
     padding: 10px;
-    margin-top: 5px;
+    margin: 0;
 }
 
 h2 {
@@ -112,7 +112,7 @@ select {
 .space {
     display: none;   
     height: 150px; 
-    margin-top: 100px;
+    margin: 100px 0 200px 0;
     
 }
 
@@ -251,6 +251,7 @@ select {
 #search-section {
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
 }
 
 #search {
@@ -273,7 +274,6 @@ select {
 }
 
 #qty[type="number"]{
-    /* width: 20px;   */
     margin: 10px 0 10px 0;
 }
 
@@ -353,6 +353,10 @@ select {
 
     .carbo {
         width: 55%;
+    }
+
+    #submit {
+        margin-bottom: 100px;
     }
 
     #two {
