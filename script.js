@@ -109,6 +109,7 @@ function addToList(object) {
     //set serving size and unit to variables
     let unit = object.unit
     let size = object.weight
+    let quantity = object.quantity
 
     //add p tag and desciption to list
     let foodDes = document.createElement('p')
@@ -120,7 +121,7 @@ function addToList(object) {
 
     //add option and serving sizes
     const setAmount = document.createElement('p')
-    setAmount.innerHTML = `${unit} (${size}g)`
+    setAmount.innerHTML = `${quantity} ${unit} (${size}g)`
     select.appendChild(setAmount)
     container.appendChild(select)
 
