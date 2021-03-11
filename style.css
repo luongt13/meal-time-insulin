@@ -271,6 +271,11 @@ select {
     margin-bottom: 50px;
 }
 
+#started {
+    background-color: #FFCB05;
+    color: black;
+}
+
 #search-section {
     display: flex;
     flex-flow: column nowrap;
