@@ -148,18 +148,6 @@ To create a tool to calculate units of insulin to administer based on total carb
 | **TOTAL:**                |   |**48**|**52**|**52**| 
 
 ## Code Snippet
-**Function:** extract a specific a value 
-1. Pass the lengthy array (with many objects inside) through a forEach()
-2. Target the key of "attr_id" with a value of 205
-3. Extract the "value" from the object
-
-```
-    food.full_nutrients.forEach(carb => {
-        if (carb.attr_id === 205) {
-        setDetails.carb = carb.value
-        }
-    })
-```
 **Function:** delete list item
 1. The user clicks on the remove icon and their parent will be removed
 2. The targets previous siblings innerHTML is taken to remove it from the total
@@ -170,7 +158,6 @@ To create a tool to calculate units of insulin to administer based on total carb
         event.target.parentNode.remove()  
         let test = document.querySelector('.total-carbs')
         test.innerHTML = test.innerHTML - event.target.previousSibling.innerHTML
-
         if (listSelect.childElementCount === 0) {
             test.remove()
         }
