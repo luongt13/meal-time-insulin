@@ -347,7 +347,7 @@ select {
     select:hover {
         box-shadow: 0 0 5px#000;
     }
-    
+
     .space {
         display: block;    
     }
@@ -368,7 +368,7 @@ select {
     input:hover {
         box-shadow: 0 0 10px#282828;
     }
-
+ 
     .result-item {
         height: 100px;
     }
