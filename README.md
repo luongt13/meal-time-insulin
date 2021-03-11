@@ -327,7 +327,7 @@ To create a tool to calculate units of insulin to administer based on total carb
 * Allow users to filter food items 
 * Allow users to add blood gluocose readings
 * Allow users to save and update insulin to carbohydrate ratio
-* Allow users to choose to round their units to the nearest whole or half.
+* Allow users to choose to round their units to the nearest whole or half
 * Use localstorage to store created meals and frequently added food items
 
 ## Priority Matrix
@@ -351,7 +351,7 @@ To create a tool to calculate units of insulin to administer based on total carb
 | Functional list that adds food and carbohydrates | H | 5 | 6 | TBD |
 | Functional buttons        | H | 2 | 4 | TBD | 
 | Adjust serving size       | H | 5 | 2 | TBD |
-| Add and calculate insulin to carbohydrate ratio | H | 3 | 5 | TBD |
+| Add and calculate insulin to carbohydrate ratio | H | 3 | 6 | TBD |
 | **TOTAL:**                |   |**48**|**TBD**|**TBD**| 
 
 ## Code Snippet

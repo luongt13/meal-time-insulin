@@ -18,6 +18,7 @@ let nextBtn2 = document.querySelector('#next2')
 let section1 = document.querySelector('#one')
 let section2 = document.querySelector('#two')
 let selectRound = document.querySelector('.round')
+let startBtn = document.querySelector('#started')
 
 //remove items
 function removeItems() {
@@ -278,15 +279,40 @@ searchBtn.addEventListener('click', async (event) => {
     await getFoods(foodItem)
     searchBtn.style.margin = "5px 0 5px 0"
     nextBtn.style.display = "block"
-    //Jeremy helped
-    window.scrollTo(0, input.offsetTop)
+    window.scrollTo({
+        top: input.offsetTop,
+        left: 0,
+        behavior: "smooth"
+    })
+})
+
+startBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: input.offsetTop,
+        left: 0,
+        behavior: "smooth"
+    })
 })
 
 //button/section to appear after one is clicked 
 nextBtn.addEventListener('click', () => {
     nextBtn2.style.display = "block"
     section1.style.display = "block"
+    window.scrollTo({
+        top: section1.offsetTop,
+        left: 0,
+        behavior: "smooth"
+    })
+
 })
 
 //button to appear after one is clicked
-nextBtn2.addEventListener('click', ()=> section2.style.display = "block")
+nextBtn2.addEventListener('click', ()=> {
+    section2.style.display = "block"
+    window.scrollTo({
+        top: section2.offsetTop,
+        left: 0,
+        behavior: "smooth"
+    })
+
+})
