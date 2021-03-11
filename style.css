@@ -16,20 +16,23 @@ body {
 }
 
 header {
-    background-color: #33393D;
+    /* background-color: #0d1a26; */
+    background-color:  #00001a;
     display: flex;
     flex-direction: column;
     padding: 10px;
     justify-content: center;
     align-items: center;
-    text-transform: uppercase;
     width: 100%;
+    box-shadow: 0 0 10px#202020;    
 }
 
 header img {
     max-width: 40%;
+    filter: brightness(40%);
     /* padding: 5px; */
 }
+
 /* text inside next buttons */
 a {
     text-decoration: none;
@@ -56,7 +59,7 @@ h2, h3 {
 
 h1 {
     color: white;
-    font-family: 'Unica One', cursive;
+    /* font-family: 'Unica One', cursive; */
     font-size: calc(16px + 3vw);
     padding: 10px;
     margin: 0;
@@ -311,6 +314,10 @@ select {
 }
 
 @media only screen and (min-width: 600px) {
+    h1 {
+        margin: 25px 0 25px 0;
+
+    }
     .space {
         display: block;    
     }
