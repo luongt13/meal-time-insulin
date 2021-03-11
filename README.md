@@ -176,10 +176,26 @@ To create a tool to calculate units of insulin to administer based on total carb
         }
     })
 ```
+**Function:** find units of insulin and round to the half or whole unit
+1. Divde the total by the users ratio
+2. If they chose round to the half unit then multiply by 2, round then divide by 2
+3. If they chose round to the whole unit then round using Math.round()
 
-
+```
+    function calculate(totalCarb, carbRatio) {
+        let unitsInsulin = totalCarb/carbRatio
+        //rounding
+        if (selectRound.value === "Round to half unit") {
+            displayUnits(Math.round(unitsInsulin * 2)/2)
+        }  else if (selectRound.value === "Round to whole unit") {
+            displayUnits(Math.round(unitsInsulin))     
+        } else {
+            displayUnits(Number(unitsInsulin.toFixed(2)))
+        }
+    }
+```
 ## Change Log
-1. Switching APIs
+**Switching APIs**
 * API 1: I was unable to get a specific nutrient they were just giving me ids
 * API 2: I could get specific nutrients, but limited to certain food items. They also had limit details (i.e. it says apple, but it's actually apple juice and it does not specify anywhere other than ingredients
 * Result: I went with API 1. Even though they don't specify "carbohydrates", they provide the specific nutrients under "attribute ids" 
