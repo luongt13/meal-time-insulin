@@ -136,8 +136,12 @@ function addToList(object) {
     deleteIcon.addEventListener('click', (event)=> {
         event.target.parentNode.remove()  
         let test = document.querySelector('.total-carbs')
-        test.innerHTML = document.querySelector('.total-carbs').innerHTML - event.target.previousSibling.innerHTML
-        console.log(event.target.previousSibling.innerHTML)
+        test.innerHTML = test.innerHTML - event.target.previousSibling.innerHTML
+
+        //if listSelect has no children then remove test...
+        if (listSelect.childElementCount === 0) {
+            test.remove()
+        }
     })
 
     //update carb when quantity is added
