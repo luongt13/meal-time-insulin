@@ -8,181 +8,6 @@ To create a tool to calculate units of insulin to administer based on total carb
 
 ## API and Data Sample
 ```
-{  "totalHits": 4396,
-    "currentPage": 1,
-    "totalPages": 88,
-    "pageList": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-    ],
-    "foodSearchCriteria": {
-        "query": "pizza",
-        "generalSearchInput": "pizza",
-        "pageNumber": 1,
-        "numberOfResultsPerPage": 50,
-        "pageSize": 50,
-        "requireAllWords": false
-    },
-    "foods": [
-        {
-            "fdcId": 559593,
-            "description": "PIZZA",
-            "lowercaseDescription": "pizza",
-            "dataType": "Branded",
-            "gtinUpc": "077387206271",
-            "publishedDate": "2019-04-01",
-            "brandOwner": "FIGHT'N TOMATO PIZZA CO.",
-            "ingredients": "CRUST (ENRICHED FLOUR (WHEAT FLOUR, BARLEY MALT, NIACIN, REDUCED IRON, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID), WATER, SALT, RYE FLOUR, PALM OIL, FUMARIC ACID, CONTAINS LESS THAN 2% OF DEXTROSE, SOY LECITHIN, VEGETABLE OIL (CANOLA AND/OR SOYBEAN OIL), XANTHAN GUM, YEAST, ACETIC ACID), SAUCE (WATER, TOMATO PASTE, SEASONING (SALT, SUGAR, ONION POWDER, SPICES, XANTHAN AND GUAR GUM, GARLIC POWDER, POTASSIUM SORBATE, CITRIC ACID, TRICALCIUM PHOSPHATE, SOYBEAN OIL), MODIFIED FOOD STARCH, PARMESAN CHEESE (PASTEURIZED COW'S MILK, CHEESE CULTURE, SALT AND ENZYMES), LOW MOISTURE PART SKIM MOZZARELLA CHEESE (PASTEURIZED PART SKIM MILK, CHEESE CULTURES, SALT, ENZYMES), PORK PIZZA TOPPING (PORK, WATER, TEXTURED SOY FLOUR (SOY FLOUR, SALT), CONTAINS 2% OR LESS; SALT, SPICES, HYDROLYZED SOY PROTEIN, MALTODEXTRIN, FLAVORING, PAPRIKA (COLOR), TBHQ, BHT, CITRIC ACID), PEPPERONI (PORK, BEEF, SALT, CONTAINS 2% OR LESS OF FLAVORINGS, DEXTROSE, OLEORESIN OF PAPRIKA, SMOKE FLAVORING, ASCORBIC ACID, LACTIC ACID STARTER CULTURE, SODIUM NITRITE, BHA, BHT, CITRIC ACID), HARD SALAMI (PORK, SALT, DEXTROSE, CONTAINS 2% OR LESS OF BEEF, FLAVORINGS, LACTIC ACID STARTER CULTURE, NATURAL SMOKE FLAVOR, SODIUM NITRITE, SPICES, VITAMIN C (SODIUM ASCORBATE), BHA, BHT, CITRIC ACID), BACON (CURED WITH WATER, SALT, SUGAR, SODIUM ERYTHORBATE, SODIUM NITRITE. MAY ALSO CONTAIN DEXTROSE, FLAVORING, HONEY, DEHYDRATED PORK BROTH, POTASSIUM CHLORIDE, POTASSIUM LACTATE, SMOKE FLAVORING, SODIUM DIACETATE, SODIUM PHOSPHATES)",
-            "allHighlightFields": "<b>Brand Owner</b>: FIGHT'N TOMATO <em>PIZZA</em> CO.<br/><b>Ingredients</b>:  MOZZARELLA CHEESE (PASTEURIZED PART SKIM MILK, CHEESE CULTURES, SALT, ENZYMES), PORK <em>PIZZA</em> TOPPING (PORK",
-            "score": 604.3352,
-            "foodNutrients": [
-                {
-                    "nutrientId": 1110,
-                    "nutrientName": "Vitamin D (D2 + D3), International Units",
-                    "nutrientNumber": "324",
-                    "unitName": "IU",
-                    "derivationCode": "LCCD",
-                    "derivationDescription": "Calculated from a daily value percentage per serving size measure",
-                    "value": 0.0
-                },
-                {
-                    "nutrientId": 1003,
-                    "nutrientName": "Protein",
-                    "nutrientNumber": "203",
-                    "unitName": "G",
-                    "derivationCode": "LCCS",
-                    "derivationDescription": "Calculated from value per serving size measure",
-                    "value": 10.2
-                },
-                {
-                    "nutrientId": 1004,
-                    "nutrientName": "Total lipid (fat)",
-                    "nutrientNumber": "204",
-                    "unitName": "G",
-                    "derivationCode": "LCCS",
-                    "derivationDescription": "Calculated from value per serving size measure",
-                    "value": 10.8
-                },
-                {
-                    "nutrientId": 1005,
-                    "nutrientName": "Carbohydrate, by difference",
-                    "nutrientNumber": "205",
-                    "unitName": "G",
-                    "derivationCode": "LCCS",
-                    "derivationDescription": "Calculated from value per serving size measure",
-                    "value": 28.0
-                },
-                {
-                    "nutrientId": 1008,
-                    "nutrientName": "Energy",
-                    "nutrientNumber": "208",
-                    "unitName": "KCAL",
-                    "derivationCode": "LCCS",
-                    "derivationDescription": "Calculated from value per serving size measure",
-                    "value": 242
-                },
-                {
-                    "nutrientId": 2000,
-                    "nutrientName": "Sugars, total including NLEA",
-                    "nutrientNumber": "269",
-                    "unitName": "G",
-                    "derivationCode": "LCCS",
-                    "derivationDescription": "Calculated from value per serving size measure",
-                    "value": 1.27
-                },
-                {
-                    "nutrientId": 1079,
-                    "nutrientName": "Fiber, total dietary",
-                    "nutrientNumber": "291",
-                    "unitName": "G",
-                    "derivationCode": "LCCS",
-                    "derivationDescription": "Calculated from value per serving size measure",
-                    "value": 1.9
-                },
-                {
-                    "nutrientId": 1087,
-                    "nutrientName": "Calcium, Ca",
-                    "nutrientNumber": "301",
-                    "unitName": "MG",
-                    "derivationCode": "LCCS",
-                    "derivationDescription": "Calculated from value per serving size measure",
-                    "value": 127
-                },
-                {
-                    "nutrientId": 1089,
-                    "nutrientName": "Iron, Fe",
-                    "nutrientNumber": "303",
-                    "unitName": "MG",
-                    "derivationCode": "LCCS",
-                    "derivationDescription": "Calculated from value per serving size measure",
-                    "value": 3.18
-                },
-                {
-                    "nutrientId": 1092,
-                    "nutrientName": "Potassium, K",
-                    "nutrientNumber": "306",
-                    "unitName": "MG",
-                    "derivationCode": "LCCS",
-                    "derivationDescription": "Calculated from value per serving size measure",
-                    "value": 76.0
-                },
-                {
-                    "nutrientId": 1093,
-                    "nutrientName": "Sodium, Na",
-                    "nutrientNumber": "307",
-                    "unitName": "MG",
-                    "derivationCode": "LCCS",
-                    "derivationDescription": "Calculated from value per serving size measure",
-                    "value": 669
-                },
-                {
-                    "nutrientId": 1235,
-                    "nutrientName": "Sugars, added",
-                    "nutrientNumber": "539",
-                    "unitName": "G",
-                    "derivationCode": "LCCS",
-                    "derivationDescription": "Calculated from value per serving size measure",
-                    "value": 1.3
-                },
-                {
-                    "nutrientId": 1253,
-                    "nutrientName": "Cholesterol",
-                    "nutrientNumber": "601",
-                    "unitName": "MG",
-                    "derivationCode": "LCCS",
-                    "derivationDescription": "Calculated from value per serving size measure",
-                    "value": 22.0
-                },
-                {
-                    "nutrientId": 1257,
-                    "nutrientName": "Fatty acids, total trans",
-                    "nutrientNumber": "605",
-                    "unitName": "G",
-                    "derivationCode": "LCCS",
-                    "derivationDescription": "Calculated from value per serving size measure",
-                    "value": 0.0
-                },
-                {
-                    "nutrientId": 1258,
-                    "nutrientName": "Fatty acids, total saturated",
-                    "nutrientNumber": "606",
-                    "unitName": "G",
-                    "derivationCode": "LCCS",
-                    "derivationDescription": "Calculated from value per serving size measure",
-                    "value": 5.1
-                }
-            ]
-        },
-```
-```
 {
     "common": [
         {
@@ -264,38 +89,6 @@ To create a tool to calculate units of insulin to administer based on total carb
                     "value": 3.8306,
                     "attr_id": 269
                 },
-                {
-                    "value": 0.1391,
-                    "attr_id": 287
-                },
-                {
-                    "value": 2.461,
-                    "attr_id": 291
-                },
-                {
-                    "value": 201.16,
-                    "attr_id": 301
-                },
-                {
-                    "value": 2.6536,
-                    "attr_id": 303
-                },
-                {
-                    "value": 25.68,
-                    "attr_id": 304
-                },
-                {
-                    "value": 231.12,
-                    "attr_id": 305
-                },
-                {
-                    "value": 184.04,
-                    "attr_id": 306
-                },
-                {
-                    "value": 639.86,
-                    "attr_id": 307
-                },
 ```
 
 ## Wireframes
@@ -355,6 +148,23 @@ To create a tool to calculate units of insulin to administer based on total carb
 | **TOTAL:**                |   |**48**|**52**|**52**| 
 
 ## Code Snippet
+**Function:** extract a specific a value 
+1. Pass the lengthy array (with many objects inside) through a forEach()
+2. Target the key of "attr_id" with a value of 205
+3. Extract the "value" from the object
+
+```
+    food.full_nutrients.forEach(carb => {
+        if (carb.attr_id === 205) {
+        setDetails.carb = carb.value
+        }
+    })
+```
+**Function:** delete list item
+1. The user clicks on the remove icon and their parent will be removed
+2. The targets previous siblings innerHTML is taken to remove it from the total
+3. If there are no items left in the list then the total carbohydrates will be removed. 
+
 ```
     deleteIcon.addEventListener('click', (event)=> {
         event.target.parentNode.remove()  
@@ -366,4 +176,10 @@ To create a tool to calculate units of insulin to administer based on total carb
         }
     })
 ```
+
+
 ## Change Log
+1. Switching APIs
+* API 1: I was unable to get a specific nutrient they were just giving me ids
+* API 2: I could get specific nutrients, but limited to certain food items. They also had limit details (i.e. it says apple, but it's actually apple juice and it does not specify anywhere other than ingredients
+* Result: I went with API 1. Even though they don't specify "carbohydrates", they provide the specific nutrients under "attribute ids" 
