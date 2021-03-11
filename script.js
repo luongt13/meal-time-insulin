@@ -74,10 +74,10 @@ function displayTotal(total) {
 //add total carbs
 function addTotal() {
     let array = []
+    console.log(array)
     let getAmounts = document.querySelectorAll('.carb-amount')
     getAmounts.forEach(value => {
-        let values = value.innerHTML
-        array.push(Number(values))
+        array.push(Number(value.innerHTML))
     })
     let total = array.reduce((accumulator, currentValue) => accumulator + currentValue)
     displayTotal(Number(total.toFixed(1)))
