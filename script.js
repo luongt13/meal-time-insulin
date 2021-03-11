@@ -266,6 +266,7 @@ searchBtn.addEventListener('click', async (event) => {
     removeItems()
     await getFoods(foodItem)
     nextBtn.style.display = "block"
+    //Jeremy helped
     window.scrollTo(0, resultsSection.offsetTop)
 })
 
