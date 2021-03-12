@@ -163,20 +163,15 @@ select {
     border-radius: 50%;
 }
 
-.icon:active {
-    background-color: #003b00;
-}
-
 .delete {
     width: 35px;
     height: 35px;
     align-self: flex-end;
     border-radius: 50%;
-
 }
 
-.delete:active {
-    background-color: #7f0000;
+.icon:active, .delete:active {
+    box-shadow: 0 0 5px#000;    
 }
 
 .thumbnail {
@@ -390,16 +385,16 @@ select {
         margin-bottom: 100px;
     }
 
-    .icon:hover, .delete:hover {
-        background-color: #FFCB05;    
-    }
-    
-    .icon:active {
-        background-color: #003b00;
+    .icon, .delete {
+        opacity: 0.5;
     }
 
-    .delete:active {
-        background-color: #7f0000;
+    .icon:hover, .delete:hover {
+        opacity: 1.0;
+    }
+
+    .icon:active, .delete:active {
+        box-shadow: 0 0 5px #000;
     }
 
     .insulin {
