@@ -163,10 +163,6 @@ select {
     border-radius: 50%;
 }
 
-.icon:hover, .delete:hover {
-    background-color: #FFCB05;    
-}
-
 .icon:active {
     background-color: #003b00;
 }
@@ -182,6 +178,7 @@ select {
 .delete:active {
     background-color: #7f0000;
 }
+
 .thumbnail {
     height: auto;
     width: 20%;
@@ -391,6 +388,18 @@ select {
 
     .next {
         margin-bottom: 100px;
+    }
+
+    .icon:hover, .delete:hover {
+        background-color: #FFCB05;    
+    }
+    
+    .icon:active {
+        background-color: #003b00;
+    }
+
+    .delete:active {
+        background-color: #7f0000;
     }
 
     .insulin {
