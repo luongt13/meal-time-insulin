@@ -248,7 +248,7 @@ function displayBrandedResults(brandedFoods) {
         resultsSection.appendChild(item)
 
         //when icon is clicked
-        icon.addEventListener('click', () => addToList(setDetails))
+        icon.addEventListener('click', () => addToList(setDetails))    
     })
 }
 

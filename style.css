@@ -83,6 +83,7 @@ h4 {
 h6 {
     margin: 0;
 }
+
 input {
     border: none;
     border-radius: 25px;
@@ -159,18 +160,28 @@ select {
 .icon {
     height: 50px;
     width: 50px;
+    border-radius: 50%;
 }
 
 .icon:hover, .delete:hover {
-    opacity: 0.5
+    background-color: #FFCB05;    
+}
+
+.icon:active {
+    background-color: #003b00;
 }
 
 .delete {
     width: 35px;
     height: 35px;
     align-self: flex-end;
+    border-radius: 50%;
+
 }
 
+.delete:active {
+    background-color: #7f0000;
+}
 .thumbnail {
     height: auto;
     width: 20%;
