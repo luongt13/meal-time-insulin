@@ -264,7 +264,6 @@ async function getFoods(query) {
         })
         displayCommonResults(response.data.common)
         displayBrandedResults(response.data.branded)
-        console.log(response.data.common)
         } catch {
              alert("No Food Found")
         }
@@ -272,7 +271,7 @@ async function getFoods(query) {
 
 //when search button is clicked
 searchBtn.addEventListener('click', async (event) => {
-    // event.preventDefault()
+    event.preventDefault()
     let foodItem = input.value
     removeItems()
     await getFoods(foodItem)
@@ -302,7 +301,6 @@ nextBtn.addEventListener('click', () => {
         left: 0,
         behavior: "smooth"
     })
-
 })
 
 //button to appear after one is clicked
@@ -313,5 +311,4 @@ nextBtn2.addEventListener('click', ()=> {
         left: 0,
         behavior: "smooth"
     })
-
 })
