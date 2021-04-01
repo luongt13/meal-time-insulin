@@ -6,6 +6,7 @@ Meal Time Insulin
 Site link to [github pages](https://luongt13.github.io/meal-time-insulin/)
 and [surge](http://mealtime-insulin.surge.sh/)
 
+![](/assets/mealtime-rec.gif)
 ## Project Description
 To create a tool to calculate units of insulin to administer based on total carbohydrates for a given meal. This is designed specifically for those that administer insulin before their meal, commonly those diagnosed with type 1 diabetes.
 
